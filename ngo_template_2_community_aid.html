@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Aid - NGO Template 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#faf7f2;color:#1a1208}
+  nav{background:#1a1208;padding:1.2rem 5rem;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff}
+  .logo span{color:#f5a623}
+  nav ul{display:flex;gap:2.5rem;list-style:none}
+  nav ul a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:0.88rem;transition:color 0.2s}
+  nav ul a:hover{color:#f5a623}
+  .nav-cta{background:#f5a623;color:#1a1208!important;padding:0.5rem 1.3rem;border-radius:2px;font-weight:600}
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+  .hero-left{background:#1a1208;padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center}
+  .hero-right{background:#f5a623;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:3rem}
+  .hero-right::before{content:'';position:absolute;top:-50px;right:-50px;width:350px;height:350px;border-radius:50%;background:rgba(0,0,0,0.08)}
+  .hero-eyebrow{color:#f5a623;font-size:0.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:0.8rem}
+  .eyebrow-line{width:40px;height:1px;background:#f5a623}
+  .hero h1{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:#fff;line-height:1.05;margin-bottom:2rem}
+  .hero p{color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:3rem;font-size:1rem;max-width:480px}
+  .hero-actions{display:flex;align-items:center;gap:2rem}
+  .btn-white{background:#fff;color:#1a1208;padding:1rem 2.2rem;font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;border-radius:2px;text-decoration:none}
+  .play-btn{display:flex;align-items:center;gap:0.8rem;color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9rem}
+  .play-circle{width:40px;height:40px;border:1px solid rgba(255,255,255,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff}
+  .hero-card{background:#1a1208;border-radius:6px;padding:1.5rem 2rem;z-index:1;position:relative}
+  .hero-card-title{font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:#f5a623;margin-bottom:0.3rem}
+  .hero-card-sub{color:rgba(255,255,255,0.6);font-size:0.85rem}
+  .cause-counter{position:absolute;top:3rem;left:3rem;background:#fff;border-radius:4px;padding:1rem 1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+  .cause-title{font-size:0.75rem;color:#999;font-weight:500;margin-bottom:0.5rem}
+  .cause-faces{display:flex;margin-bottom:0.5rem}
+  .face{width:28px;height:28px;border-radius:50%;border:2px solid #fff;background:#d4a853;margin-right:-8px}
+  .f2{background:#e8c090}
+  .f3{background:#c47a3c}
+  .cause-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#1a1208}
+  .impact{padding:5rem;background:#fff}
+  .impact-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}
+  .impact h2{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;max-width:400px;line-height:1.2}
+  .impact-link{color:#f5a623;font-weight:600;text-decoration:none;font-size:0.9rem}
+  .causes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .cause-card{border-radius:6px;overflow:hidden;position:relative}
+  .cause-img{height:220px;background:#e0d5c0;position:relative}
+  .c1{background:linear-gradient(160deg,#8B4513,#D2691E)}
+  .c2{background:linear-gradient(160deg,#1a5c78,#2eaad4)}
+  .c3{background:linear-gradient(160deg,#2d6a1f,#5cb85c)}
+  .cause-emoji{position:absolute;bottom:1rem;left:1rem;font-size:2.5rem}
+  .cause-body{padding:1.5rem;background:#f0ebe0}
+  .cause-progress-label{display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.5rem;font-weight:500}
+  .progress-bar{height:4px;background:#e0d5c0;border-radius:2px;margin-bottom:1rem}
+  .progress-fill{height:100%;border-radius:2px;background:#f5a623}
+  .cause-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.3rem}
+  .cause-body p{font-size:0.82rem;color:#7a6a50;line-height:1.5}
+  .volunteers{background:#1a1208;padding:5rem;display:flex;gap:5rem;align-items:center}
+  .vol-left{flex:1}
+  .vol-left h2{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:#fff;line-height:1.2;margin-bottom:1.5rem}
+  .vol-left p{color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:2rem}
+  .vol-cta{background:#f5a623;color:#1a1208;padding:0.9rem 2rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;text-decoration:none;display:inline-block}
+  .vol-right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .vol-stat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:1.5rem}
+  .vol-stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#f5a623}
+  .vol-stat-label{color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:0.3rem}
+  footer{background:#0d0b06;padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center}
+  footer .logo{font-size:1.1rem}
+  .footer-right{color:rgba(255,255,255,0.3);font-size:0.8rem}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Community<span>Aid</span></div>
+  <ul>
+    <li><a href="#">Causes</a></li>
+    <li><a href="#">Volunteer</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#" class="nav-cta">Get Involved</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="eyebrow-line"></span>Transforming Communities</div>
+    <h1>Every Act of Kindness Matters</h1>
+    <p>Join over 8,000 volunteers making a difference. Our community-driven programs have reached 2.4 million people across South Asia.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-white">Support a Cause</a>
+      <a href="#" class="play-btn"><div class="play-circle">▶</div>Watch Impact</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="cause-counter">
+      <div class="cause-title">Active Volunteers</div>
+      <div class="cause-faces"><div class="face f1"></div><div class="face f2"></div><div class="face f3"></div></div>
+      <div class="cause-num">8,241+ People</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">₹42L</div>
+      <div class="hero-card-sub">Raised this month for flood relief</div>
+    </div>
+  </div>
+</section>
+<section class="impact">
+  <div class="impact-header">
+    <h2>Our Active Causes</h2>
+    <a href="#" class="impact-link">View All Causes →</a>
+  </div>
+  <div class="causes-grid">
+    <div class="cause-card">
+      <div class="cause-img c1"><span class="cause-emoji">🏫</span></div>
+      <div class="cause-body">
+        <div class="cause-progress-label"><span>Education</span><span>72%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+        <h3>Build 50 Schools by 2026</h3>
+        <p>Providing education infrastructure in tribal belts of Central India</p>
+      </div>
+    </div>
+    <div class="cause-card">
+      <div class="cause-img c2"><span class="cause-emoji">💧</span></div>
+      <div class="cause-body">
+        <div class="cause-progress-label"><span>Water</span><span>55%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:55%"></div></div>
+        <h3>Clean Water for 100 Villages</h3>
+        <p>Installing filtration units in water-scarce regions of Rajasthan</p>
+      </div>
+    </div>
+    <div class="cause-card">
+      <div class="cause-img c3"><span class="cause-emoji">🌱</span></div>
+      <div class="cause-body">
+        <div class="cause-progress-label"><span>Agriculture</span><span>88%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:88%"></div></div>
+        <h3>Farmer Livelihood Support</h3>
+        <p>Sustainable farming training for 10,000 smallholder farmers</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="volunteers">
+  <div class="vol-left">
+    <h2>Become a Change-Maker Today</h2>
+    <p>Whether you have two hours or two years, your time creates real change. Join our volunteer network across 48 cities.</p>
+    <a href="#" class="vol-cta">Start Volunteering</a>
+  </div>
+  <div class="vol-right">
+    <div class="vol-stat"><div class="vol-stat-num">8,241</div><div class="vol-stat-label">Active Volunteers</div></div>
+    <div class="vol-stat"><div class="vol-stat-num">48</div><div class="vol-stat-label">Cities Covered</div></div>
+    <div class="vol-stat"><div class="vol-stat-num">₹2.4Cr</div><div class="vol-stat-label">Distributed Aid</div></div>
+    <div class="vol-stat"><div class="vol-stat-num">24</div><div class="vol-stat-label">Years of Service</div></div>
+  </div>
+</section>
+<footer>
+  <div class="logo">Community<span style="color:#f5a623">Aid</span></div>
+  <div class="footer-right">© 2025 CommunityAid NGO. Registered 80G Trust.</div>
+</footer>
+</body>
+</html>

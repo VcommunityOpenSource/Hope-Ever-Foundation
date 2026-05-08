@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Udhav Foundation — NGO for Human Dignity</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f7f3ee;
+  --dark: #171310;
+  --mid: #3a2e28;
+  --accent: #c9572a;
+  --gold: #c8a96e;
+  --text-muted: #8a7a6e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 1.4rem 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(247,243,238,0.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,87,42,0.12);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-mark {
+  width: 36px; height: 36px; background: var(--accent); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-logo-mark svg { width: 18px; height: 18px; fill: #fff; }
+.nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--dark); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--mid); font-size: 0.85rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { background: var(--accent); color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 3px; font-weight: 500 !important; }
+
+/* ── HERO ── */
+.hero {
+  height: 100vh; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.hero-photo {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1600&q=90') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(23,19,16,0.88) 0%,
+    rgba(23,19,16,0.55) 45%,
+    rgba(23,19,16,0.15) 100%
+  );
+}
+.hero-overlay-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+  background: linear-gradient(to top, rgba(23,19,16,0.7), transparent);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 5vw 7rem;
+  max-width: 680px;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 2rem;
+}
+.hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+.hero-eyebrow span { font-size: 0.72rem; font-weight: 500; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300; color: #fff; line-height: 1.05;
+  margin-bottom: 1.5rem; letter-spacing: -0.02em;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-desc {
+  color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.85;
+  max-width: 480px; margin-bottom: 2.5rem; font-weight: 300;
+}
+.hero-actions { display: flex; gap: 1rem; align-items: center; }
+.btn-primary {
+  background: var(--accent); color: #fff; padding: 0.9rem 2.2rem;
+  border-radius: 3px; font-weight: 500; text-decoration: none; font-size: 0.9rem;
+  letter-spacing: 0.03em; transition: background 0.2s;
+}
+.btn-primary:hover { background: #a8431e; }
+.btn-ghost {
+  color: rgba(255,255,255,0.7); font-size: 0.88rem; text-decoration: none;
+  display: flex; align-items: center; gap: 0.6rem; transition: color 0.2s;
+}
+.btn-ghost:hover { color: #fff; }
+.play-btn {
+  width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; color: #fff;
+}
+
+/* Stats bar */
+.hero-stats {
+  position: absolute; bottom: 0; right: 0; z-index: 2;
+  display: flex;
+}
+.hero-stat {
+  padding: 2rem 2.5rem; background: rgba(247,243,238,0.08);
+  backdrop-filter: blur(8px); border-left: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.hero-stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ── MISSION STRIP ── */
+.mission-strip {
+  background: var(--accent); padding: 1.4rem 5vw;
+  display: flex; align-items: center; justify-content: center; gap: 2rem;
+}
+.mission-strip p {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1.15rem; color: #fff; text-align: center;
+}
+.strip-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.3); }
+
+/* ── ABOUT SPLIT ── */
+.about {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 85vh;
+}
+.about-photo-col { position: relative; overflow: hidden; }
+.about-photo-main {
+  width: 100%; height: 100%;
+  background: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=85') center/cover no-repeat;
+  transition: transform 0.6s ease;
+}
+.about-photo-col:hover .about-photo-main { transform: scale(1.03); }
+.about-photo-badge {
+  position: absolute; bottom: 2.5rem; right: -1px;
+  background: var(--cream); padding: 1.5rem 2rem;
+  border-left: 4px solid var(--accent);
+  max-width: 220px;
+}
+.apb-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700;
+  color: var(--accent); line-height: 1;
+}
+.apb-text { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem; line-height: 1.4; }
+.about-content {
+  padding: 6rem 5vw; display: flex; flex-direction: column; justify-content: center;
+  background: var(--cream);
+}
+.section-tag {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.7rem; font-weight: 500; color: var(--accent);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.tag-line { width: 30px; height: 1px; background: var(--accent); }
+.about-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 500;
+  line-height: 1.2; margin-bottom: 1.5rem; color: var(--dark);
+}
+.about-content h2 em { font-style: italic; color: var(--accent); }
+.about-content p { color: var(--text-muted); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1.2rem; font-weight: 300; }
+.about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.pillar {
+  padding: 1.2rem; border: 1px solid rgba(201,87,42,0.15);
+  border-radius: 4px; transition: border-color 0.2s, background 0.2s;
+}
+.pillar:hover { border-color: var(--accent); background: rgba(201,87,42,0.03); }
+.pillar-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.pillar h4 { font-size: 0.88rem; font-weight: 500; margin-bottom: 0.3rem; }
+.pillar p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+/* ── PHOTO STORIES ── */
+.stories { padding: 6rem 5vw; background: var(--dark); }
+.stories-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3rem;
+}
+.stories-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: #fff;
+}
+.stories-header h2 em { font-style: italic; color: var(--gold); }
+.stories-link { color: var(--gold); font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid rgba(200,169,110,0.4); padding-bottom: 2px; }
+.stories-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.5px; }
+.story-item { position: relative; overflow: hidden; cursor: pointer; }
+.story-item:hover .story-img { transform: scale(1.04); }
+.story-img { width: 100%; transition: transform 0.5s ease; display: block; }
+.s1 { height: 500px; background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=85') center/cover no-repeat; }
+.s2 { height: 240px; background: url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=500&q=85') center/cover no-repeat; }
+.s3 { height: 240px; background: url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=500&q=85') center/cover no-repeat; }
+.s4 { height: 240px; background: url('https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&q=85') center 30%/cover no-repeat; }
+.s5 { height: 240px; background: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=500&q=85') center/cover no-repeat; }
+.story-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(23,19,16,0.85) 0%, transparent 55%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem;
+}
+.story-tag-pill {
+  display: inline-block; background: var(--accent); color: #fff;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 0.25rem 0.7rem; border-radius: 2px; margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+.story-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500;
+  color: #fff; line-height: 1.3;
+}
+.story-sub { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 0.3rem; }
+.right-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; }
+
+/* ── IMPACT NUMBERS ── */
+.impact { padding: 6rem 5vw; background: var(--cream); }
+.impact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.impact-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 500; line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.impact-left h2 em { font-style: italic; color: var(--accent); }
+.impact-left p { color: var(--text-muted); line-height: 1.9; font-size: 0.95rem; font-weight: 300; margin-bottom: 2rem; }
+.impact-left a {
+  display: inline-block; background: var(--dark); color: #fff;
+  padding: 0.9rem 2rem; border-radius: 3px; text-decoration: none;
+  font-size: 0.88rem; font-weight: 500;
+}
+.numbers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.number-item {
+  padding: 2.5rem; border: 1px solid rgba(201,87,42,0.12);
+  margin: -1px 0 0 -1px;
+}
+.number-item:hover { background: rgba(201,87,42,0.03); }
+.num-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1;
+}
+.num-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.4; }
+
+/* ── TEAM SECTION ── */
+.team { padding: 6rem 5vw; background: #fff; }
+.team-header { text-align: center; margin-bottom: 3.5rem; }
+.team-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 500;
+}
+.team-header h2 em { font-style: italic; color: var(--accent); }
+.team-header p { color: var(--text-muted); margin-top: 0.8rem; font-size: 0.92rem; font-weight: 300; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.team-card { text-align: center; }
+.team-photo {
+  width: 100%; aspect-ratio: 3/4; border-radius: 6px; overflow: hidden;
+  margin-bottom: 1rem; position: relative;
+}
+.team-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.team-card:hover .team-photo img { transform: scale(1.05); }
+.team-photo-overlay {
+  position: absolute; inset: 0; background: rgba(201,87,42,0.7);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+}
+.team-card:hover .team-photo-overlay { opacity: 1; }
+.team-socials { display: flex; gap: 0.5rem; }
+.team-social { width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.75rem; text-decoration: none; }
+.team-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; }
+.team-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* ── VOLUNTEER CTA ── */
+.volunteer {
+  position: relative; overflow: hidden;
+  min-height: 70vh; display: flex; align-items: center;
+}
+.vol-photo {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1600&q=85') center 30%/cover no-repeat;
+}
+.vol-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(23,19,16,0.9) 0%, rgba(201,87,42,0.6) 60%, rgba(23,19,16,0.4) 100%);
+}
+.vol-content { position: relative; z-index: 2; padding: 0 5vw; max-width: 640px; }
+.vol-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; color: #fff;
+  line-height: 1.05; margin-bottom: 1.5rem;
+}
+.vol-content h2 em { font-style: italic; color: var(--gold); }
+.vol-content p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+.vol-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.vol-btn-main { background: #fff; color: var(--dark); padding: 1rem 2.5rem; border-radius: 3px; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+.vol-btn-outline { border: 1px solid rgba(255,255,255,0.45); color: #fff; padding: 1rem 2.5rem; border-radius: 3px; font-size: 0.9rem; text-decoration: none; }
+
+/* ── TESTIMONIALS ── */
+.testimonials { padding: 6rem 5vw; background: var(--dark); }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.test-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px; padding: 2rem; position: relative; overflow: hidden;
+}
+.test-card::before { content: '"'; position: absolute; top: -0.5rem; left: 1.2rem; font-family: 'Cormorant Garamond', serif; font-size: 6rem; color: var(--accent); opacity: 0.2; line-height: 1; }
+.test-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+.test-person { display: flex; align-items: center; gap: 0.8rem; }
+.test-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+.test-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.test-name { font-size: 0.88rem; font-weight: 500; color: #fff; }
+.test-loc { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 0.1rem; }
+
+/* ── DONATE ── */
+.donate { padding: 6rem 5vw; background: var(--cream); }
+.donate-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.donate-photo { position: relative; border-radius: 8px; overflow: hidden; height: 480px; }
+.donate-photo-fill { width: 100%; height: 100%; background: url('https://images.unsplash.com/photo-1609220136736-443140cffec6?w=700&q=85') center/cover no-repeat; }
+.donate-photo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(23,19,16,0.85), transparent);
+  padding: 2rem 1.5rem;
+}
+.donate-photo-caption span { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.8); }
+.donate-form h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 500;
+  line-height: 1.2; margin-bottom: 0.8rem;
+}
+.donate-form h2 em { font-style: italic; color: var(--accent); }
+.donate-form > p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.8; margin-bottom: 2rem; font-weight: 300; }
+.amount-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.amt-btn {
+  padding: 0.7rem 1.4rem; border: 1.5px solid rgba(201,87,42,0.25); background: #fff;
+  border-radius: 3px; cursor: pointer; font-size: 0.9rem; font-weight: 500;
+  color: var(--mid); transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+}
+.amt-btn:hover, .amt-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.donate-note { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; }
+.donate-submit {
+  width: 100%; background: var(--accent); color: #fff;
+  padding: 1rem; border: none; border-radius: 3px;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: background 0.2s;
+}
+.donate-submit:hover { background: #a8431e; }
+.trust-badges { display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.trust-badge { font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); padding: 5rem 5vw 3rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+.footer-brand {}
+.footer-brand .nav-logo-text { color: #fff; font-size: 1.3rem; }
+.footer-brand p { color: rgba(255,255,255,0.35); font-size: 0.82rem; line-height: 1.7; margin-top: 0.8rem; font-weight: 300; max-width: 260px; }
+.footer-reg { margin-top: 1rem; font-size: 0.72rem; color: rgba(255,255,255,0.2); line-height: 1.7; }
+.footer-col h4 { font-size: 0.72rem; font-weight: 600; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; }
+.footer-col a { text-decoration: none; color: rgba(255,255,255,0.35); font-size: 0.82rem; transition: color 0.2s; font-weight: 300; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+.footer-socials { display: flex; gap: 1rem; }
+.footer-social { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.35); font-size: 0.75rem; text-decoration: none; transition: all 0.2s; }
+.footer-social:hover { border-color: var(--gold); color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+    </div>
+    <span class="nav-logo-text">Udhav Foundation</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Our Work</a></li>
+    <li><a href="#">Stories</a></li>
+    <li><a href="#">Volunteer</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#donate" class="nav-cta">Donate Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — real photo background -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-bottom"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Serving Communities Since 2003</span>
+    </div>
+    <h1>Every <em>human</em><br>deserves<br>dignity.</h1>
+    <p class="hero-desc">We work at the ground level — with real people, in real communities — to provide education, healthcare, and hope to those who need it most.</p>
+    <div class="hero-actions">
+      <a href="#donate" class="btn-primary">Support Our Work</a>
+      <a href="#stories" class="btn-ghost">
+        <div class="play-btn">▶</div>
+        Watch Real Stories
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">3.2M</div><div class="hero-stat-label">People Reached</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">22</div><div class="hero-stat-label">Years Active</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">94%</div><div class="hero-stat-label">Funds to Programs</div></div>
+  </div>
+</section>
+
+<!-- MISSION STRIP -->
+<div class="mission-strip">
+  <p>"We believe aid without dignity is not aid at all."</p>
+  <div class="strip-divider"></div>
+  <p>— Priya Menon, Founder & Executive Director</p>
+</div>
+
+<!-- ABOUT SPLIT -->
+<section class="about">
+  <div class="about-photo-col">
+    <div class="about-photo-main"></div>
+    <div class="about-photo-badge">
+      <div class="apb-num">22 yrs</div>
+      <div class="apb-text">of grassroots work across 14 states</div>
+    </div>
+  </div>
+  <div class="about-content">
+    <div class="section-tag"><div class="tag-line"></div>Who We Are</div>
+    <h2>Not charity.<br><em>Partnership.</em></h2>
+    <p>Udhav Foundation was built on a simple belief: lasting change only comes when communities are active participants — not passive recipients — in their own development.</p>
+    <p>From rural Tamil Nadu to the slums of Mumbai, our 1,200 field workers live and work alongside the people we serve. Every program is designed with, not for, the community.</p>
+    <div class="about-pillars">
+      <div class="pillar"><div class="pillar-icon">📚</div><h4>Education</h4><p>School enrollment, tutoring & vocational skills for 180,000 children</p></div>
+      <div class="pillar"><div class="pillar-icon">🏥</div><h4>Healthcare</h4><p>Mobile clinics, maternal care & mental health in 400 villages</p></div>
+      <div class="pillar"><div class="pillar-icon">🌾</div><h4>Livelihoods</h4><p>Farmer cooperatives, micro-loans & market access programs</p></div>
+      <div class="pillar"><div class="pillar-icon">🏠</div><h4>Housing</h4><p>Disaster-resilient homes for 12,000 families since 2010</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STORIES GRID -->
+<section class="stories" id="stories">
+  <div class="stories-header">
+    <div>
+      <div class="section-tag" style="color:var(--gold)"><div class="tag-line" style="background:var(--gold)"></div>Impact Stories</div>
+      <h2>Faces of <em>change</em></h2>
+    </div>
+    <a href="#" class="stories-link">View all stories →</a>
+  </div>
+  <div class="stories-grid">
+    <div class="story-item">
+      <div class="story-img s1"></div>
+      <div class="story-overlay">
+        <span class="story-tag-pill">Education</span>
+        <div class="story-title">Ananya's school was 12 km away. We built one closer.</div>
+        <div class="story-sub">Rajasthan · 2024</div>
+      </div>
+    </div>
+    <div class="right-col">
+      <div class="story-item">
+        <div class="story-img s2"></div>
+        <div class="story-overlay">
+          <span class="story-tag-pill">Healthcare</span>
+          <div class="story-title">Free clinics reach 8,000 patients monthly</div>
+          <div class="story-sub">Tamil Nadu · 2024</div>
+        </div>
+      </div>
+      <div class="story-item">
+        <div class="story-img s3"></div>
+        <div class="story-overlay">
+          <span class="story-tag-pill">Hunger</span>
+          <div class="story-title">Zero hunger program feeds 50,000 daily</div>
+          <div class="story-sub">Maharashtra · 2024</div>
+        </div>
+      </div>
+      <div class="story-item">
+        <div class="story-img s4"></div>
+        <div class="story-overlay">
+          <span class="story-tag-pill">Women</span>
+          <div class="story-title">Meena's cooperative: 240 women, one voice</div>
+          <div class="story-sub">Odisha · 2023</div>
+        </div>
+      </div>
+      <div class="story-item">
+        <div class="story-img s5"></div>
+        <div class="story-overlay">
+          <span class="story-tag-pill">Relief</span>
+          <div class="story-title">Flood response: 1,400 families sheltered</div>
+          <div class="story-sub">Assam · 2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT NUMBERS -->
+<section class="impact">
+  <div class="impact-inner">
+    <div class="impact-left">
+      <div class="section-tag"><div class="tag-line"></div>Our Impact</div>
+      <h2>22 years of<br>measurable <em>change</em></h2>
+      <p>We track every rupee and every life touched. Our annual impact reports are fully public — because accountability to our donors and communities is non-negotiable.</p>
+      <a href="#">Download Impact Report 2024 →</a>
+    </div>
+    <div class="numbers-grid">
+      <div class="number-item"><div class="num-val">3.2M</div><div class="num-label">People directly served since 2003</div></div>
+      <div class="number-item"><div class="num-val">94%</div><div class="num-label">Of every donation reaches programs</div></div>
+      <div class="number-item"><div class="num-val">1,240</div><div class="num-label">Full-time field workers on the ground</div></div>
+      <div class="number-item"><div class="num-val">₹42Cr</div><div class="num-label">Total aid distributed since inception</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team">
+  <div class="team-header">
+    <div class="section-tag" style="justify-content:center"><div class="tag-line"></div>Our People</div>
+    <h2>The humans behind the <em>work</em></h2>
+    <p>Our leadership team has spent combined 80+ years in the field — not behind desks.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Priya Menon">
+        <div class="team-photo-overlay"><div class="team-socials"><a href="#" class="team-social">in</a><a href="#" class="team-social">tw</a></div></div>
+      </div>
+      <div class="team-name">Priya Menon</div>
+      <div class="team-role">Founder & Executive Director</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Arjun Das">
+        <div class="team-photo-overlay"><div class="team-socials"><a href="#" class="team-social">in</a><a href="#" class="team-social">tw</a></div></div>
+      </div>
+      <div class="team-name">Arjun Das</div>
+      <div class="team-role">Director of Field Operations</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Kavitha Sharma">
+        <div class="team-photo-overlay"><div class="team-socials"><a href="#" class="team-social">in</a><a href="#" class="team-social">tw</a></div></div>
+      </div>
+      <div class="team-name">Kavitha Sharma</div>
+      <div class="team-role">Head of Health Programs</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Ravi Krishnan">
+        <div class="team-photo-overlay"><div class="team-socials"><a href="#" class="team-social">in</a><a href="#" class="team-social">tw</a></div></div>
+      </div>
+      <div class="team-name">Ravi Krishnan</div>
+      <div class="team-role">Community Outreach Lead</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER CTA — real human photo bg -->
+<section class="volunteer">
+  <div class="vol-photo"></div>
+  <div class="vol-overlay"></div>
+  <div class="vol-content">
+    <div class="section-tag" style="color:var(--gold)"><div class="tag-line" style="background:var(--gold)"></div>Join Us</div>
+    <h2>Your hands can<br>change a <em>life.</em></h2>
+    <p>Whether you have two hours or two years, your time creates impact that money alone cannot. Join 8,400 volunteers working across 14 states.</p>
+    <div class="vol-actions">
+      <a href="#" class="vol-btn-main">Become a Volunteer</a>
+      <a href="#" class="vol-btn-outline">Corporate Partnerships</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div style="margin-bottom:3rem">
+    <div class="section-tag" style="color:var(--gold)"><div class="tag-line" style="background:var(--gold)"></div>From Those We Serve</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:#fff">Their words, <em style="font-style:italic;color:var(--gold)">unedited.</em></h2>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <p class="test-text">Udhav's team didn't just give us food. They stayed for three months, helped us rebuild our house and put my children back in school. That is real help.</p>
+      <div class="test-person">
+        <div class="test-avatar"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80" alt="Sumathi"></div>
+        <div><div class="test-name">Sumathi R.</div><div class="test-loc">Flood survivor, Tirunelveli 2023</div></div>
+      </div>
+    </div>
+    <div class="test-card">
+      <p class="test-text">I never thought my daughter would go to college. The scholarship changed everything. She is now studying engineering in Chennai.</p>
+      <div class="test-person">
+        <div class="test-avatar"><img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=100&q=80" alt="Rajesh Kumar"></div>
+        <div><div class="test-name">Rajesh Kumar</div><div class="test-loc">Farmer, Villupuram</div></div>
+      </div>
+    </div>
+    <div class="test-card">
+      <p class="test-text">Our self-help group has 48 women now. We have our own savings, our own loans, and for the first time — our own voice in the panchayat.</p>
+      <div class="test-person">
+        <div class="test-avatar"><img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=100&q=80" alt="Meena Devi"></div>
+        <div><div class="test-name">Meena Devi</div><div class="test-loc">SHG Leader, Odisha</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate" id="donate">
+  <div class="donate-inner">
+    <div class="donate-photo">
+      <div class="donate-photo-fill"></div>
+      <div class="donate-photo-caption">
+        <span>"A child who eats well learns well."<br>— Udhav Nutrition Program, Tamil Nadu</span>
+      </div>
+    </div>
+    <div class="donate-form">
+      <div class="section-tag"><div class="tag-line"></div>Make a Donation</div>
+      <h2>Fund <em>real</em> change<br>today.</h2>
+      <p>₹500 feeds a child for a week. ₹2,000 pays for a health camp visit. ₹10,000 sponsors a girl's full school year. Choose your amount:</p>
+      <div class="amount-row">
+        <button class="amt-btn" onclick="setAmt(this)">₹500</button>
+        <button class="amt-btn active" onclick="setAmt(this)">₹1,000</button>
+        <button class="amt-btn" onclick="setAmt(this)">₹2,000</button>
+        <button class="amt-btn" onclick="setAmt(this)">₹5,000</button>
+        <button class="amt-btn" onclick="setAmt(this)">₹10,000</button>
+        <button class="amt-btn" onclick="setAmt(this)">Custom</button>
+      </div>
+      <p class="donate-note">🔒 Secure payment · 80G tax deduction · Instant receipt</p>
+      <button class="donate-submit" id="donate-submit-btn">Donate ₹1,000 Now</button>
+      <div class="trust-badges">
+        <div class="trust-badge">✓ FCRA Registered</div>
+        <div class="trust-badge">✓ 80G & 12A Certified</div>
+        <div class="trust-badge">✓ GuideStar Platinum</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo-text">Udhav Foundation</div>
+      <p>Working at the intersection of dignity, development, and human rights since 2003. Every rupee you give is tracked, reported, and felt.</p>
+      <div class="footer-reg">
+        Reg. No. NGO/2003/8821 · FCRA: 083780320<br>
+        80G · 12A · CSR eligible · GuideStar Platinum
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">Education</a></li>
+        <li><a href="#">Healthcare</a></li>
+        <li><a href="#">Women's Empowerment</a></li>
+        <li><a href="#">Disaster Relief</a></li>
+        <li><a href="#">Farmer Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">Corporate CSR</a></li>
+        <li><a href="#">Start a Fundraiser</a></li>
+        <li><a href="#">Internships</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">📞 +91 44 2222 8888</a></li>
+        <li><a href="#">✉ help@udhavfoundation.org</a></li>
+        <li><a href="#">📍 Chennai, Tamil Nadu</a></li>
+        <li><a href="#">Annual Reports</a></li>
+        <li><a href="#">Press Room</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Udhav Foundation. All rights reserved. Designed with purpose.</div>
+    <div class="footer-socials">
+      <a href="#" class="footer-social">fb</a>
+      <a href="#" class="footer-social">tw</a>
+      <a href="#" class="footer-social">ig</a>
+      <a href="#" class="footer-social">yt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let selected = 1000;
+  function setAmt(el) {
+    document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    const t = el.textContent.trim();
+    if (t === 'Custom') {
+      document.getElementById('donate-submit-btn').textContent = 'Donate Custom Amount';
+    } else {
+      selected = t;
+      document.getElementById('donate-submit-btn').textContent = 'Donate ' + t + ' Now';
+    }
+  }
+</script>
+</body>
+</html>
