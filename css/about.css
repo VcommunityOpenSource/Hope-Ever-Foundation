@@ -1,0 +1,94 @@
+.about-hero {
+  background: linear-gradient(140deg, #fff 0%, #f5ede1 100%);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.about-hero .container {
+  padding: 3.5rem 0;
+}
+
+.team-grid {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.team-role-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.team-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+}
+
+.district-map-wrap {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  padding: 1rem;
+}
+
+.district-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.map-svg {
+  width: 100%;
+  max-width: 450px;
+  margin-inline: auto;
+}
+
+.recognition-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.certificate-card {
+  padding: 0.9rem;
+}
+
+.certificate-card img {
+  border-radius: 10px;
+  border: 1px solid var(--c-border);
+  margin-bottom: 0.7rem;
+}
+
+.note {
+  border-left: 4px solid var(--c-accent);
+  padding: 0.9rem;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.partner-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.partner-table th,
+.partner-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--c-border);
+  text-align: left;
+  font-size: 0.93rem;
+}
+
+.partner-table th {
+  background: #f7f2ea;
+  color: var(--c-primary-strong);
+}
+
+@media (max-width: 900px) {
+  .team-grid,
+  .recognition-grid {
+    grid-template-columns: 1fr;
+  }
+}

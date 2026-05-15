@@ -1,125 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hope Foundation - NGO Template 1</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a2a1a}
-  nav{background:#fff;padding:1rem 4rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e0ede0;position:sticky;top:0;z-index:100}
-  .logo{display:flex;align-items:center;gap:10px}
-  .logo-icon{width:40px;height:40px;background:#2d7a3a;border-radius:50%;display:flex;align-items:center;justify-content:center}
-  .logo-icon svg{width:22px;height:22px;fill:#fff}
-  .logo-text{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#1a4a22}
-  nav ul{display:flex;gap:2rem;list-style:none}
-  nav ul a{text-decoration:none;color:#3a5a3a;font-size:0.9rem;font-weight:500;transition:color 0.2s}
-  nav ul a:hover{color:#2d7a3a}
-  .nav-cta{background:#2d7a3a;color:#fff!important;padding:0.5rem 1.2rem;border-radius:4px}
-  .hero{min-height:90vh;background:linear-gradient(135deg,#0d2e10 0%,#1a5c20 50%,#2d8a36 100%);display:flex;align-items:center;padding:0 4rem;position:relative;overflow:hidden}
-  .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;border:2px solid rgba(255,255,255,0.08)}
-  .hero::after{content:'';position:absolute;bottom:-150px;right:50px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,0.05)}
-  .hero-content{max-width:600px;z-index:1}
-  .hero-badge{display:inline-block;background:rgba(255,255,255,0.15);color:#a8e6b0;padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.5rem}
-  .hero h1{font-family:'Playfair Display',serif;font-size:3.8rem;font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.5rem}
-  .hero h1 span{color:#7de88a}
-  .hero p{color:rgba(255,255,255,0.75);font-size:1.1rem;line-height:1.8;margin-bottom:2.5rem;max-width:500px}
-  .hero-btns{display:flex;gap:1rem}
-  .btn-primary{background:#7de88a;color:#0d2e10;padding:0.9rem 2rem;border-radius:4px;font-weight:700;text-decoration:none;font-size:0.95rem}
-  .btn-outline{border:2px solid rgba(255,255,255,0.4);color:#fff;padding:0.9rem 2rem;border-radius:4px;font-weight:500;text-decoration:none;font-size:0.95rem}
-  .hero-img{position:absolute;right:4rem;top:50%;transform:translateY(-50%);width:420px;height:500px;border-radius:12px;overflow:hidden;background:rgba(255,255,255,0.1)}
-  .hero-img-inner{width:100%;height:100%;background:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500') center/cover;border-radius:12px;opacity:0.8}
-  .stats{background:#f0f8f0;padding:3rem 4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-  .stat-card{text-align:center}
-  .stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#2d7a3a}
-  .stat-label{color:#5a7a5a;font-size:0.85rem;margin-top:0.3rem}
-  .programs{padding:5rem 4rem;background:#fff}
-  .section-header{text-align:center;margin-bottom:3.5rem}
-  .section-tag{color:#2d7a3a;font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem}
-  .section-title{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#1a2a1a}
-  .programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-  .program-card{border:1px solid #e0ede0;border-radius:10px;padding:2rem;transition:box-shadow 0.3s}
-  .program-card:hover{box-shadow:0 8px 30px rgba(45,122,58,0.12)}
-  .prog-icon{width:50px;height:50px;background:#e8f5e9;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.5rem}
-  .prog-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#1a2a1a;margin-bottom:0.8rem}
-  .prog-desc{color:#5a7a5a;font-size:0.9rem;line-height:1.7}
-  .donate{background:#0d2e10;padding:5rem 4rem;text-align:center}
-  .donate h2{font-family:'Playfair Display',serif;font-size:2.8rem;color:#fff;margin-bottom:1rem}
-  .donate p{color:rgba(255,255,255,0.65);margin-bottom:2rem;font-size:1.05rem}
-  .donate-amounts{display:flex;gap:1rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
-  .amount-btn{background:rgba(255,255,255,0.08);color:#fff;padding:0.7rem 1.5rem;border-radius:4px;cursor:pointer;font-size:0.95rem;font-weight:500;border:1px solid rgba(255,255,255,0.2)}
-  .amount-btn.active{background:#7de88a;color:#0d2e10;border-color:#7de88a}
-  .donate-cta{background:#7de88a;color:#0d2e10;padding:1rem 3rem;border-radius:4px;font-weight:700;font-size:1rem;cursor:pointer;border:none;text-decoration:none;display:inline-block}
-  footer{background:#1a4a22;padding:3rem 4rem;color:rgba(255,255,255,0.6);display:flex;justify-content:space-between;align-items:center}
-  .footer-left .logo-text{color:#fff}
-  .footer-links{display:flex;gap:2rem}
-  .footer-links a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Hope Ever Foundation</title>
+  <meta name="description" content="Hope Ever Foundation empowers marginalized communities in Tamil Nadu through livelihoods, education, child rights, and sustainable development." />
+  <link rel="icon" href="assets/images/common/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
-<body>
-<nav>
-  <div class="logo">
-    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg></div>
-    <span class="logo-text">HopeFoundation</span>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Hope Ever Foundation Home">
+      <img src="assets/images/common/circular_logo-removebg-preview.png" alt="Hope Ever Foundation logo" class="brand-logo" />
+      <span class="brand-text">Hope Ever Foundation</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About Us</a>
+      <a href="projects.html" data-nav="projects">Projects</a>
+      <a href="programs.html" data-nav="programs">Programs &amp; Initiatives</a>
+      <a href="gallery.html" data-nav="gallery">Gallery</a>
+      <a href="contact.html" data-nav="contact">Contact Us</a>
+    </nav>
   </div>
-  <ul>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Programs</a></li>
-    <li><a href="#">Impact</a></li>
-    <li><a href="#">Stories</a></li>
-    <li><a href="#" class="nav-cta">Donate Now</a></li>
-  </ul>
-</nav>
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">🌱 Empowering Communities Since 1998</div>
-    <h1>Building a <span>Better World</span> Together</h1>
-    <p>We work alongside communities to create lasting change through education, healthcare, and sustainable development programs across 12 countries.</p>
-    <div class="hero-btns">
-      <a href="#" class="btn-primary">Join Our Mission</a>
-      <a href="#" class="btn-outline">Watch Our Story</a>
+</header>
+
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="section-subtitle" style="color:#ffdcae">Hope Ever Foundation</p>
+          <h1>Empowering marginalized communities through sustainable livelihoods, education, and dignity.</h1>
+          <p>Serving Tamil Nadu since 2012 - across 14 districts, with communities at the center of everything we do.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="projects.html">Our Projects</a>
+            <a class="btn btn-secondary" href="contact.html" style="color:#fff;border-color:#ffe6c3">Get in Touch</a>
+          </div>
+        </div>
+        <figure class="hero-image reveal float">
+          <img src="assets/images/common/hero-bg.jpg" alt="Community-focused development work in Tamil Nadu" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container intro-grid">
+        <article class="card" style="padding:1.2rem">
+          <p class="section-subtitle">Who We Are</p>
+          <h2 class="section-title">A Decade of Community-Driven Impact</h2>
+          <p>Hope Ever Foundation is a registered non-profit established in 2012 under the Indian Trust Act, 1882. For over a decade, we have worked in Tamil Nadu to empower Scheduled Castes, Scheduled Tribes, women, and youth through sustainable livelihoods, education, child rights, and environmental conservation. We combine grassroots community engagement with evidence-based planning and strong institutional partnerships.</p>
+        </article>
+        <div class="mission-vision">
+          <article class="card reveal">
+            <h3>Mission</h3>
+            <p>To raise awareness and build community capacity for environmental conservation and economic self-reliance.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Vision</h3>
+            <p>To ensure sustainable livelihoods for marginalized populations through eco-friendly practices such as organic agriculture and renewable energy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-subtitle">Impact Numbers</p>
+        <h2 class="section-title">What We Have Built Together</h2>
+        <div class="grid impact-grid">
+          <article class="card impact-card reveal"><h3 data-counter-target="1650" data-counter-suffix="+">0</h3><p>Youth trained in skill development</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="400" data-counter-suffix="+">0</h3><p>Farmers transitioned to organic farming</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="50" data-counter-suffix="+">0</h3><p>Villages with Child Rights Clubs</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="1480">0</h3><p>SC/ST youth trained under NSDC</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="500" data-counter-suffix="+">0</h3><p>Healthcare (GDA) trainees since 2020</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="85" data-counter-suffix="+">0</h3><p>Women trained in trades &amp; enterprise</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="14">0</h3><p>Districts covered across Tamil Nadu</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="13" data-counter-suffix="+">0</h3><p>Years of operation</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="30" data-counter-suffix="%">0</h3><p>Average income increase (NSDC youth)</p></article>
+          <article class="card impact-card reveal"><h3 data-counter-target="50" data-counter-suffix="%">0</h3><p>Crop yield increase (organic farmers)</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner-strip" aria-label="Partner logos">
+      <div class="partner-track">
+        <div class="partner-logo"><img src="assets/images/partners/niti-aayog.png" alt="NITI Aayog" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/nabard.png" alt="NABARD" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/tahdco.png" alt="TAHDCO" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/nsdc.png" alt="NSDC" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/asci.png" alt="ASCI" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/edii.png" alt="EDII" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/smile-foundation.png" alt="SMILE Foundation" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/manos-unidas.png" alt="Manos Unidas" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/aca-denmark.png" alt="Child Aid ACA Denmark" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/cecowor.png" alt="CECOWOR" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/birds.png" alt="BIRDS" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/kolping-india.png" alt="Kolping India" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/ssh-dindigul.png" alt="SSH Dindigul" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/nandri-foundation.png" alt="Nandri Foundation" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/state-planning-commission.png" alt="State Planning Commission Tamil Nadu" /></div>
+
+        <div class="partner-logo"><img src="assets/images/partners/niti-aayog.png" alt="NITI Aayog" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/nabard.png" alt="NABARD" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/tahdco.png" alt="TAHDCO" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/nsdc.png" alt="NSDC" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/asci.png" alt="ASCI" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/edii.png" alt="EDII" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/smile-foundation.png" alt="SMILE Foundation" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/manos-unidas.png" alt="Manos Unidas" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/aca-denmark.png" alt="Child Aid ACA Denmark" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/cecowor.png" alt="CECOWOR" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/birds.png" alt="BIRDS" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/kolping-india.png" alt="Kolping India" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/ssh-dindigul.png" alt="SSH Dindigul" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/nandri-foundation.png" alt="Nandri Foundation" /></div>
+        <div class="partner-logo"><img src="assets/images/partners/state-planning-commission.png" alt="State Planning Commission Tamil Nadu" /></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-grid">
+    <section class="footer-col footer-brand-col">
+      <img src="assets/images/common/circular_logo-removebg-preview.png" alt="Hope Ever Foundation logo" class="footer-logo" />
+      <p class="footer-tagline">Empowering marginalized communities through sustainable livelihoods, education, and dignity.</p>
+    </section>
+
+    <section class="footer-col">
+      <h3>Navigation</h3>
+      <button class="btn back-to-top" type="button">Back to Top</button>
+    </section>
+
+    <section class="footer-col">
+      <h3>Contact Details</h3>
+      <p>No. 12, Gandhi Nagar 3rd Street, Adyar, Chennai, Tamil Nadu 600020, India</p>
+      <p>Phone: +91 00000 00000 (to be updated)</p>
+      <p>Email: info@hopeeverfoundation.org (to be updated)</p>
+      <p>Instagram: @hopeeverfoundation (to be updated)</p>
+    </section>
+
+    <section class="footer-col">
+      <h3>Social &amp; External</h3>
+      <div class="footer-socials" aria-label="Social and external links">
+        <a href="https://instagram.com/hopeeverfoundation" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="assets/images/icons/instagram.svg" alt="Instagram icon" />
+        </a>
+        <a href="mailto:info@hopeeverfoundation.org" aria-label="Email">
+          <img src="assets/images/icons/mail.svg" alt="Email icon" />
+        </a>
+        <a href="tel:+910000000000" aria-label="Phone">
+          <img src="assets/images/icons/phone.svg" alt="Phone icon" />
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 Hope Ever Foundation. All rights reserved.</p>
     </div>
   </div>
-  <div class="hero-img"><div class="hero-img-inner"></div></div>
-</section>
-<section class="stats">
-  <div class="stat-card"><div class="stat-num">2.4M+</div><div class="stat-label">Lives Impacted</div></div>
-  <div class="stat-card"><div class="stat-num">48</div><div class="stat-label">Countries Served</div></div>
-  <div class="stat-card"><div class="stat-num">$12M</div><div class="stat-label">Funds Raised</div></div>
-  <div class="stat-card"><div class="stat-num">8,200</div><div class="stat-label">Volunteers</div></div>
-</section>
-<section class="programs">
-  <div class="section-header">
-    <div class="section-tag">Our Programs</div>
-    <h2 class="section-title">Making an Impact Every Day</h2>
-  </div>
-  <div class="programs-grid">
-    <div class="program-card"><div class="prog-icon">📚</div><h3 class="prog-title">Education First</h3><p class="prog-desc">Providing quality education to underprivileged children. Building schools and training teachers in remote communities.</p></div>
-    <div class="program-card"><div class="prog-icon">🏥</div><h3 class="prog-title">Health & Wellness</h3><p class="prog-desc">Mobile clinics bringing essential healthcare to rural areas. Free medical camps serving over 50,000 patients annually.</p></div>
-    <div class="program-card"><div class="prog-icon">🌾</div><h3 class="prog-title">Food Security</h3><p class="prog-desc">Sustainable farming initiatives helping families grow their own food. Zero hunger programs in 15 districts.</p></div>
-  </div>
-</section>
-<section class="donate">
-  <h2>Change a Life Today</h2>
-  <p>Every donation, no matter the size, creates real impact in someone's life.</p>
-  <div class="donate-amounts">
-    <div class="amount-btn">₹500</div>
-    <div class="amount-btn active">₹1,000</div>
-    <div class="amount-btn">₹5,000</div>
-    <div class="amount-btn">₹10,000</div>
-    <div class="amount-btn">Custom</div>
-  </div>
-  <a href="#" class="donate-cta">Donate ₹1,000 Now</a>
-</section>
-<footer>
-  <div class="footer-left"><span class="logo-text">HopeFoundation</span><br><small style="color:rgba(255,255,255,0.4);font-size:0.8rem">© 2025 All rights reserved</small></div>
-  <div class="footer-links">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms</a>
-    <a href="#">Contact</a>
-    <a href="#">80G Certificate</a>
-  </div>
 </footer>
+
+
+  <script src="js/navbar.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/scroll-reveal.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
+
