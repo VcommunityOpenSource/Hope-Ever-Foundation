@@ -1,5 +1,11 @@
 # Hope Ever Foundation — Website Project
 
+Everytime U do updates, do  - 
+git pull --rebase origin main
+
+git push -u origin main
+
+
 A static multi-page website for Hope Ever Foundation, a registered non-profit
 operating across 14 districts of Tamil Nadu since 2012.
 
