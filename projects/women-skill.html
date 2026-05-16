@@ -12,6 +12,314 @@
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
+   <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+
+    .hero-section {
+
+      height: 85vh;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+
+        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    /* =========================================
+       SIDEBAR
+    ========================================= */
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       OBJECTIVES
+    ========================================= */
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* =========================================
+       IMPACT SECTION
+    ========================================= */
+
+    .impact-section {
+      margin-top: 5rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+  </style>
 </head>
 <body data-page="projects">
   <header class="site-header" id="top">
@@ -38,16 +346,325 @@
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">Women Empowerment through Skill Development</h1>
-      <p><strong>Reference: 2022-23 | Partner: BIRDS</strong></p>
-      <img src="../assets/images/projects/women-skill/cover.jpg" alt="Women Empowerment through Skill Development" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>Practical and enterprise-oriented training for women in tailoring, beautician work, mehendi, and agarbatti-packing, supported by SHG leadership and financial literacy modules.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+ <!-- HERO SECTION -->
+
+  <section class="hero-section">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-tag">
+          Women Empowerment & Skill Development
+        </span>
+
+        <h1 class="hero-title">
+          Women Empowerment through Skill Development
+        </h1>
+
+        <p class="hero-description">
+          Comprehensive livelihood and entrepreneurship programs
+          empowering marginalized women through vocational training,
+          SHG strengthening, financial literacy,
+          and sustainable income-generation opportunities.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>
+            📍 Tamil Nadu
+          </span>
+
+          <span>
+            🤝 Partnership with BIRDS
+          </span>
+
+          <span>
+            👩 85+ Women Trained
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
+  <!-- MAIN SECTION -->
+
+  <section class="project-section">
+
+    <div class="container">
+
+      <div class="project-layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="project-content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            In partnership with BIRDS,
+            Hope Ever Foundation Trust implemented
+            comprehensive skill-building initiatives
+            focused on empowering marginalized women
+            through vocational training,
+            entrepreneurship,
+            and Self-Help Group (SHG) development.
+          </p>
+
+          <p>
+            The programs provided practical training
+            in tailoring,
+            beautician work,
+            mehendi application,
+            and agarbatti-packing,
+            helping women develop sustainable livelihood skills
+            and access income-generating opportunities.
+          </p>
+
+          <p>
+            Alongside technical training,
+            women participated in leadership development,
+            financial literacy workshops,
+            and SHG capacity-building activities
+            that strengthened their confidence
+            and decision-making abilities.
+          </p>
+
+          <p>
+            During the 2022–23 program cycle,
+            more than 85 women received tailoring training,
+            with nearly half securing formal employment
+            or establishing home-based enterprises.
+          </p>
+
+          <p>
+            The initiatives also facilitated access
+            to financial resources and community networks.
+            SHGs mobilized loans and seed capital
+            to support the establishment of micro-businesses,
+            ensuring long-term financial sustainability
+            beyond the training period.
+          </p>
+
+          <p>
+            Through these interventions,
+            women not only gained technical expertise
+            but also developed entrepreneurial skills,
+            exposure to market opportunities,
+            and greater economic independence.
+          </p>
+
+          <p>
+            The cumulative impact has been significant:
+            women’s contribution to household income increased,
+            their participation in family decision-making strengthened,
+            and communities increasingly recognized women
+            as active economic contributors
+            and community leaders.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives-section">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objectives-grid">
+
+              <div class="objective-card">
+                Provide vocational and livelihood training for marginalized women.
+              </div>
+
+              <div class="objective-card">
+                Strengthen SHGs through leadership and financial literacy programs.
+              </div>
+
+              <div class="objective-card">
+                Promote women-led micro-enterprises and entrepreneurship.
+              </div>
+
+              <div class="objective-card">
+                Facilitate access to loans, seed capital, and livelihood networks.
+              </div>
+
+              <div class="objective-card">
+                Improve women’s economic participation and decision-making power.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMPACT -->
+
+          <div class="impact-section">
+
+            <h2 class="section-title">
+              Project Impact
+            </h2>
+
+            <div class="impact-grid">
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  85+
+                </div>
+
+                <p>
+                  Women Trained in Tailoring & Livelihood Skills
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  50%
+                </div>
+
+                <p>
+                  Women Started Enterprises or Secured Employment
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  100+
+                </div>
+
+                <p>
+                  SHG Members Strengthened Through Capacity Building
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery-section">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
+                alt="Women skill development training"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+                alt="Women entrepreneurship workshop"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop"
+                alt="SHG meeting and livelihood activities"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html"
+            class="back-btn">
+
+            ← Back to Projects
+
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Women Empowerment & Skill Development
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Tamil Nadu
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Marginalized Women & SHGs
+              </li>
+
+              <li>
+                <strong>Partner Organization:</strong>
+                BIRDS
+              </li>
+
+              <li>
+                <strong>Training Areas:</strong>
+                Tailoring, Beautician, Mehendi & Agarbatti
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>👩 Women Empowerment</li>
+
+              <li>🧵 Tailoring & Vocational Skills</li>
+
+              <li>💰 Financial Literacy</li>
+
+              <li>🤝 SHG Capacity Building</li>
+
+              <li>📈 Entrepreneurship Development</li>
+
+              <li>🏠 Home-Based Livelihoods</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">

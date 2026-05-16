@@ -12,6 +12,314 @@
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
+   <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+
+    .hero-section {
+
+      height: 85vh;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    /* =========================================
+       SIDEBAR
+    ========================================= */
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       OBJECTIVES
+    ========================================= */
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* =========================================
+       IMPACT STATS
+    ========================================= */
+
+    .impact-section {
+      margin-top: 5rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+  </style>
 </head>
 <body data-page="projects">
   <header class="site-header" id="top">
@@ -38,16 +346,352 @@
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">NSDC Handicraft & Skill Development Projects</h1>
-      <p><strong>Duration: 6+ years | Partner: NSDC</strong></p>
-      <img src="../assets/images/projects/nsdc-skill/cover.jpg" alt="NSDC Handicraft & Skill Development Projects" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>Long-running employability and enterprise-focused programs for youth, artisans, women, and marginalized communities with industry linkages, certifications, and placement support.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+  <section class="hero-section">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-tag">
+          Skill Development & Livelihoods
+        </span>
+
+        <h1 class="hero-title">
+          NSDC Handicraft & Skill Development Projects
+        </h1>
+
+        <p class="hero-description">
+          Large-scale skill development initiatives empowering rural youth,
+          artisans, women, SC/ST communities,
+          and marginalized groups through vocational training,
+          entrepreneurship development,
+          and sustainable livelihood opportunities.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>
+            ⏳ Duration: 6+ Years
+          </span>
+
+          <span>
+            📍 Tamil Nadu
+          </span>
+
+          <span>
+            🤝 National Skill Development Corporation (NSDC)
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
+  <!-- MAIN CONTENT -->
+
+  <section class="project-section">
+
+    <div class="container">
+
+      <div class="project-layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="project-content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            Over the past six years,
+            Hope Ever Foundation has actively planned,
+            implemented,
+            and evaluated a wide range
+            of skill development initiatives
+            supported by the National Skill Development Corporation (NSDC).
+          </p>
+
+          <p>
+            These projects were designed
+            to enhance employability,
+            entrepreneurship,
+            and income-generation opportunities
+            for rural youth,
+            artisans,
+            women,
+            SC/ST communities,
+            and other marginalized groups.
+          </p>
+
+          <p>
+            The Foundation adopted a structured approach
+            beginning with skill gap assessments
+            and local opportunity mapping,
+            followed by the design of targeted training programs
+            in tailoring,
+            embroidery,
+            handicrafts,
+            carpentry,
+            organic farming,
+            and renewable energy.
+          </p>
+
+          <p>
+            Beyond technical training,
+            participants were equipped with
+            soft skills,
+            entrepreneurship development,
+            digital literacy,
+            and workplace communication,
+            thereby improving their overall competitiveness
+            in the job market.
+          </p>
+
+          <p>
+            The projects strongly emphasized
+            market linkages,
+            certification,
+            and placement support.
+            Artisans were connected
+            to trade fairs,
+            exhibitions,
+            and buyer-seller meets,
+            helping expand market demand
+            for handcrafted products.
+          </p>
+
+          <p>
+            For rural youth,
+            partnerships with industries,
+            cooperatives,
+            and renewable energy service providers
+            enabled job placements,
+            apprenticeships,
+            and entrepreneurial ventures.
+          </p>
+
+          <p>
+            One major 48-month NSDC partnership
+            focused on SC/ST youth
+            successfully trained more than 1,480 participants,
+            resulting in an average 30% increase
+            in monthly income
+            and the establishment of small enterprises
+            in organic farming
+            and solar energy services.
+          </p>
+
+          <p>
+            By ensuring inclusivity for women
+            and differently-abled individuals,
+            these interventions contributed
+            to sustainable livelihoods,
+            the objectives of Skill India,
+            and broader inclusive economic growth.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives-section">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objectives-grid">
+
+              <div class="objective-card">
+                Enhance employability and vocational skills among rural youth.
+              </div>
+
+              <div class="objective-card">
+                Promote entrepreneurship and income-generating activities.
+              </div>
+
+              <div class="objective-card">
+                Strengthen market linkages for artisans and handicraft producers.
+              </div>
+
+              <div class="objective-card">
+                Provide digital literacy and soft skills training.
+              </div>
+
+              <div class="objective-card">
+                Ensure inclusive opportunities for women and marginalized communities.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMPACT -->
+
+          <div class="impact-section">
+
+            <h2 class="section-title">
+              Project Impact
+            </h2>
+
+            <div class="impact-grid">
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  1,480+
+                </div>
+
+                <p>
+                  SC/ST Youth Trained
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  30%
+                </div>
+
+                <p>
+                  Average Income Increase
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  6+
+                </div>
+
+                <p>
+                  Years of Skill Development Initiatives
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery-section">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                alt="Skill development training"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+                alt="Vocational workshop"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
+                alt="Entrepreneurship training"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html"
+            class="back-btn">
+
+            ← Back to Projects
+
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Skill Development & Livelihoods
+              </li>
+
+              <li>
+                <strong>Duration:</strong>
+                6+ Years
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Tamil Nadu
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Rural Youth, Women & Artisans
+              </li>
+
+              <li>
+                <strong>Supported By:</strong>
+                National Skill Development Corporation (NSDC)
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>🧵 Handicrafts & Tailoring</li>
+
+              <li>🌱 Organic Farming</li>
+
+              <li>⚡ Renewable Energy</li>
+
+              <li>💻 Digital Literacy</li>
+
+              <li>📈 Entrepreneurship Development</li>
+
+              <li>🤝 Placement & Market Linkages</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">

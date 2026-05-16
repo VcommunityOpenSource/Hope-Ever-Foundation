@@ -35,19 +35,654 @@
       <a href="../gallery.html" data-nav="gallery">Gallery</a>
       <a href="../contact.html" data-nav="contact">Contact Us</a>
     </nav>
+    <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+
+    .hero-section {
+
+      height: 85vh;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+
+        url("https://images.unsplash.com/photo-1522202222206-b7501a9fdb8c?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    /* =========================================
+       SIDEBAR
+    ========================================= */
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       OBJECTIVES
+    ========================================= */
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* =========================================
+       IMPACT SECTION
+    ========================================= */
+
+    .impact-section {
+      margin-top: 5rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+  </style>
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">Youth Skill Development - SMILE Twin e-Learning Programme (STeP)</h1>
-      <p><strong>1,650+ youth trained | Partner: SMILE Foundation via BIRDS</strong></p>
-      <img src="../assets/images/projects/step-youth/cover.jpg" alt="Youth Skill Development - SMILE Twin e-Learning Programme (STeP)" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>A high-impact youth program covering digital, communication, retail, and healthcare training with strong placement outcomes and clear income gains for first-generation earners.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+    <section class="hero-section">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-tag">
+          Youth Skill Development & Employability
+        </span>
+
+        <h1 class="hero-title">
+          SMILE Twin e-Learning Programme (STeP)
+        </h1>
+
+        <p class="hero-description">
+          Transforming the lives of underprivileged youth
+          through employability training,
+          digital literacy,
+          healthcare skills,
+          and career-oriented education programs.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>
+            📍 Tamil Nadu
+          </span>
+
+          <span>
+            🤝 SMILE Foundation & BIRDS
+          </span>
+
+          <span>
+            👨‍🎓 1,650+ Youth Trained
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
+  <!-- MAIN SECTION -->
+
+  <section class="project-section">
+
+    <div class="container">
+
+      <div class="project-layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="project-content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            In collaboration with SMILE Foundation through BIRDS,
+            Hope Ever Foundation Trust supported
+            youth-focused skill development programs
+            aimed at improving employability
+            and economic opportunities
+            for underprivileged youth.
+          </p>
+
+          <p>
+            Over the years,
+            more than 1,650 young people
+            have been trained in a wide range of skills,
+            including basic computer applications,
+            spoken English,
+            soft skills,
+            retail management,
+            Tally,
+            and healthcare training
+            through the General Duty Assistant (GDA) program.
+          </p>
+
+          <p>
+            The training programs focused not only
+            on technical knowledge,
+            but also on communication,
+            confidence-building,
+            workplace readiness,
+            and professional behavior,
+            making participants more competitive
+            in urban and semi-urban job markets.
+          </p>
+
+          <p>
+            During the 2022–23 program cycle alone,
+            216 youth completed healthcare training,
+            out of which 126 secured placements
+            in hospitals,
+            BPOs,
+            and retail companies.
+          </p>
+
+          <p>
+            Placement rates consistently averaged between 60–70%,
+            with many graduates earning between
+            ₹8,000 and ₹15,000 per month,
+            representing a major improvement
+            over their pre-training income levels.
+          </p>
+
+          <p>
+            Beyond employment outcomes,
+            the program addressed larger social challenges
+            including unemployment,
+            school dropout cycles,
+            and lack of career exposure
+            among youth living in slums
+            and semi-urban communities.
+          </p>
+
+          <p>
+            By empowering young people with practical skills,
+            confidence,
+            and career pathways,
+            the initiative has transformed beneficiaries
+            into role models within their communities,
+            encouraging other youth to pursue education,
+            training,
+            and meaningful employment opportunities.
+          </p>
+
+          <p>
+            The program continues to demonstrate
+            the transformative role
+            of targeted skill development
+            in promoting dignity,
+            economic mobility,
+            and inclusive social development.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives-section">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objectives-grid">
+
+              <div class="objective-card">
+                Improve employability and technical skills among youth.
+              </div>
+
+              <div class="objective-card">
+                Provide healthcare, IT, retail, and accounting training opportunities.
+              </div>
+
+              <div class="objective-card">
+                Build communication, confidence, and workplace readiness.
+              </div>
+
+              <div class="objective-card">
+                Reduce unemployment and dropout cycles in marginalized communities.
+              </div>
+
+              <div class="objective-card">
+                Facilitate placements and sustainable career opportunities for youth.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMPACT -->
+
+          <div class="impact-section">
+
+            <h2 class="section-title">
+              Project Impact
+            </h2>
+
+            <div class="impact-grid">
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  1,650+
+                </div>
+
+                <p>
+                  Youth Trained Across Multiple Skill Programs
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  60–70%
+                </div>
+
+                <p>
+                  Average Placement Rate
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  ₹8K–15K
+                </div>
+
+                <p>
+                  Average Monthly Income After Placement
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery-section">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1522202222206-b7501a9fdb8c?q=80&w=1200&auto=format&fit=crop"
+                alt="Youth skill training"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                alt="Computer training program"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
+                alt="Employability and placement support"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html"
+            class="back-btn">
+
+            ← Back to Projects
+
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Youth Skill Development & Employability
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Tamil Nadu
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Underprivileged Youth
+              </li>
+
+              <li>
+                <strong>Partner Organizations:</strong>
+                SMILE Foundation & BIRDS
+              </li>
+
+              <li>
+                <strong>Key Training Areas:</strong>
+                IT, Healthcare, Retail & Communication Skills
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>💻 Computer Applications</li>
+
+              <li>🗣 Spoken English & Soft Skills</li>
+
+              <li>🏥 Healthcare (GDA Program)</li>
+
+              <li>📊 Tally & Retail Management</li>
+
+              <li>🤝 Placement & Career Support</li>
+
+              <li>👨‍🎓 Youth Empowerment</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
+
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">

@@ -12,6 +12,315 @@
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
+  
+  <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+
+    .hero-section {
+
+      height: 85vh;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+
+        url("https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    /* =========================================
+       SIDEBAR
+    ========================================= */
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       OBJECTIVES
+    ========================================= */
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* =========================================
+       IMPACT SECTION
+    ========================================= */
+
+    .impact-section {
+      margin-top: 5rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+  </style>
 </head>
 <body data-page="projects">
   <header class="site-header" id="top">
@@ -38,16 +347,342 @@
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">Healthcare & BFSI Skill Training</h1>
-      <p><strong>Since: 2020 | Partner: BIRDS</strong></p>
-      <img src="../assets/images/projects/healthcare-bfsi/cover.jpg" alt="Healthcare & BFSI Skill Training" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>Sector-specific programs in healthcare and BFSI with internships, placement support, and pathways into formal jobs across hospitals, clinics, banks, NBFCs, and insurance companies.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+ <section class="hero-section">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-tag">
+          Healthcare & Financial Services Skill Development
+        </span>
+
+        <h1 class="hero-title">
+          Healthcare & BFSI Skill Training
+        </h1>
+
+        <p class="hero-description">
+          Specialized employability programs preparing disadvantaged youth
+          for careers in healthcare,
+          banking,
+          insurance,
+          and financial services through practical,
+          industry-oriented training.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>
+            📍 Tamil Nadu
+          </span>
+
+          <span>
+            🤝 Partnership with BIRDS
+          </span>
+
+          <span>
+            🏥 500+ Healthcare Trainees
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
+  <!-- MAIN SECTION -->
+
+  <section class="project-section">
+
+    <div class="container">
+
+      <div class="project-layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="project-content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            Hope Ever Foundation Trust,
+            in partnership with BIRDS,
+            implemented specialized skill development programs
+            in sectors experiencing rapid employment growth,
+            particularly healthcare
+            and Banking,
+            Financial Services,
+            and Insurance (BFSI).
+          </p>
+
+          <p>
+            Since 2020,
+            more than 500 youth
+            have successfully completed
+            General Duty Assistant (GDA) training programs,
+            preparing them for careers in hospitals,
+            clinics,
+            home-care services,
+            and allied healthcare institutions.
+          </p>
+
+          <p>
+            The healthcare training included
+            practical exposure,
+            clinical internships,
+            and hospital-based learning experiences,
+            ensuring participants were job-ready
+            upon successful completion of the program.
+          </p>
+
+          <p>
+            These initiatives addressed
+            the growing demand
+            for trained healthcare workers
+            while simultaneously creating employment opportunities
+            for youth from economically disadvantaged communities.
+          </p>
+
+          <p>
+            In parallel,
+            the BFSI training program
+            mobilized 233 youth,
+            equipping them with skills required
+            for careers in banking,
+            insurance,
+            customer service,
+            and financial operations.
+          </p>
+
+          <p>
+            Out of these participants,
+            64 youth secured placements
+            in banks,
+            non-banking financial companies,
+            and insurance firms,
+            creating stable career pathways
+            in the formal financial sector.
+          </p>
+
+          <p>
+            Many beneficiaries
+            became first-generation earners
+            in their families,
+            using their income
+            to support household expenses,
+            contribute to siblings’ education,
+            and begin personal savings.
+          </p>
+
+          <p>
+            Through these sector-focused interventions,
+            the programs created sustainable pathways
+            out of economic vulnerability,
+            while also helping industries
+            meet the demand for skilled service professionals
+            in critical sectors.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives-section">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objectives-grid">
+
+              <div class="objective-card">
+                Train youth for careers in healthcare and financial services.
+              </div>
+
+              <div class="objective-card">
+                Provide industry-oriented practical and internship exposure.
+              </div>
+
+              <div class="objective-card">
+                Improve employability among disadvantaged communities.
+              </div>
+
+              <div class="objective-card">
+                Support first-generation earners through sustainable careers.
+              </div>
+
+              <div class="objective-card">
+                Meet industry demand for skilled healthcare and BFSI professionals.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMPACT -->
+
+          <div class="impact-section">
+
+            <h2 class="section-title">
+              Project Impact
+            </h2>
+
+            <div class="impact-grid">
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  500+
+                </div>
+
+                <p>
+                  Youth Trained in Healthcare (GDA)
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  233
+                </div>
+
+                <p>
+                  Youth Mobilized in BFSI Programs
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  64
+                </div>
+
+                <p>
+                  Placements in Banks & Financial Institutions
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery-section">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop"
+                alt="Healthcare training program"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+                alt="Banking and financial services training"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1522202222206-b7501a9fdb8c?q=80&w=1200&auto=format&fit=crop"
+                alt="Youth employability training"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html"
+            class="back-btn">
+
+            ← Back to Projects
+
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Healthcare & BFSI Skill Development
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Tamil Nadu
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Disadvantaged Youth
+              </li>
+
+              <li>
+                <strong>Partner Organization:</strong>
+                BIRDS
+              </li>
+
+              <li>
+                <strong>Started:</strong>
+                2020
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>🏥 General Duty Assistant (GDA)</li>
+
+              <li>💼 BFSI Skill Development</li>
+
+              <li>🏦 Banking & Insurance Careers</li>
+
+              <li>🩺 Hospital Internship Exposure</li>
+
+              <li>👨‍🎓 Youth Employability</li>
+
+              <li>📈 Placement & Career Support</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">

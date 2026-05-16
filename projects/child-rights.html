@@ -12,6 +12,314 @@
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
+  <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+
+    .hero-section {
+
+      height: 85vh;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+
+        url("https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    /* =========================================
+       SIDEBAR
+    ========================================= */
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       OBJECTIVES
+    ========================================= */
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* =========================================
+       IMPACT SECTION
+    ========================================= */
+
+    .impact-section {
+      margin-top: 5rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+  </style>
 </head>
 <body data-page="projects">
   <header class="site-header" id="top">
@@ -38,16 +346,330 @@
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">Child Rights Awareness (CECOWOR & Child Aid ACA Denmark)</h1>
-      <p><strong>Duration: 24 months | Rural Tamil Nadu</strong></p>
-      <img src="../assets/images/projects/child-rights/cover.jpg" alt="Child Rights Awareness (CECOWOR & Child Aid ACA Denmark)" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>A child rights initiative that formed Child Rights Clubs and trained duty bearers to improve awareness, reporting, and community response against abuse, child labor, and child marriage.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+  <section class="hero-section">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-tag">
+          Child Rights & Community Protection
+        </span>
+
+        <h1 class="hero-title">
+          Child Rights Awareness Program
+        </h1>
+
+        <p class="hero-description">
+          A community-based initiative focused on strengthening
+          child protection systems, promoting child rights awareness,
+          and empowering children through leadership and advocacy platforms.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>
+            ⏳ Duration: 24 Months
+          </span>
+
+          <span>
+            📍 Rural Tamil Nadu
+          </span>
+
+          <span>
+            🤝 ACA Denmark & CECOWOR
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
+  <!-- MAIN SECTION -->
+
+  <section class="project-section">
+
+    <div class="container">
+
+      <div class="project-layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="project-content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            In partnership with Child Aid (ACA) Denmark
+            and CECOWOR,
+            Hope Ever Foundation implemented
+            a 24-month project focused on
+            raising awareness about child rights
+            and strengthening protective mechanisms
+            for children in rural Tamil Nadu.
+          </p>
+
+          <p>
+            The initiative aimed to empower children,
+            families,
+            schools,
+            and local communities
+            through awareness camps,
+            workshops,
+            and structured community engagement activities.
+          </p>
+
+          <p>
+            One of the major components of the project
+            was the establishment of
+            Child Rights Clubs (CRCs)
+            in schools and villages.
+            These clubs became important platforms
+            for educating children about their rights,
+            developing leadership skills,
+            and encouraging participation
+            in advocacy and decision-making processes.
+          </p>
+
+          <p>
+            The project also focused on strengthening
+            community accountability systems
+            by training teachers,
+            local leaders,
+            and government officials
+            on their responsibilities
+            in preventing child labor,
+            child marriage,
+            abuse,
+            and neglect.
+          </p>
+
+          <p>
+            Capacity-building sessions sensitized stakeholders
+            and promoted safer,
+            more child-friendly environments
+            within schools and communities.
+          </p>
+
+          <p>
+            Child Rights Clubs were successfully established
+            in 50 villages,
+            contributing to improved reporting mechanisms
+            and stronger community response systems
+            for child rights violations.
+          </p>
+
+          <p>
+            Through continuous awareness,
+            advocacy,
+            and community participation,
+            the initiative fostered
+            a lasting culture of child protection
+            and embedded child rights
+            into local development processes.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives-section">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objectives-grid">
+
+              <div class="objective-card">
+                Raise awareness about child rights among children and communities.
+              </div>
+
+              <div class="objective-card">
+                Establish Child Rights Clubs in schools and villages.
+              </div>
+
+              <div class="objective-card">
+                Strengthen community accountability and child protection systems.
+              </div>
+
+              <div class="objective-card">
+                Prevent child labor, child marriage, and abuse.
+              </div>
+
+              <div class="objective-card">
+                Promote leadership and advocacy among children.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMPACT -->
+
+          <div class="impact-section">
+
+            <h2 class="section-title">
+              Project Impact
+            </h2>
+
+            <div class="impact-grid">
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  50+
+                </div>
+
+                <p>
+                  Villages with Child Rights Clubs
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  24
+                </div>
+
+                <p>
+                  Months of Community Engagement
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  1000+
+                </div>
+
+                <p>
+                  Children & Community Members Reached
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery-section">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop"
+                alt="Child rights awareness workshop"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop"
+                alt="School awareness program"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1200&auto=format&fit=crop"
+                alt="Children participation activities"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html"
+            class="back-btn">
+
+            ← Back to Projects
+
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Child Rights & Protection
+              </li>
+
+              <li>
+                <strong>Duration:</strong>
+                24 Months
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Rural Tamil Nadu
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Children, Teachers & Communities
+              </li>
+
+              <li>
+                <strong>Partner Organizations:</strong>
+                ACA Denmark & CECOWOR
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>👧 Child Rights Awareness</li>
+
+              <li>🏫 School-Based Child Rights Clubs</li>
+
+              <li>⚖ Protection & Advocacy</li>
+
+              <li>🤝 Community Participation</li>
+
+              <li>📢 Awareness Campaigns</li>
+
+              <li>🛡 Prevention of Child Abuse & Child Labor</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">

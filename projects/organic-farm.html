@@ -12,6 +12,314 @@
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
+   <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+
+    .hero-section {
+
+      height: 85vh;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+
+        url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    /* =========================================
+       SIDEBAR
+    ========================================= */
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       OBJECTIVES
+    ========================================= */
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* =========================================
+       IMPACT STATS
+    ========================================= */
+
+    .impact-section {
+      margin-top: 5rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+  </style>
 </head>
 <body data-page="projects">
   <header class="site-header" id="top">
@@ -38,16 +346,283 @@
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">Organic Farming Livelihood Program (ASCI Partnership)</h1>
-      <p><strong>Duration: 36 months | Partner: ASCI</strong></p>
-      <img src="../assets/images/projects/organic-farm/cover.jpg" alt="Organic Farming Livelihood Program (ASCI Partnership)" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>A sustainable agriculture transition initiative with demonstration plots, farm advisory support, and market linkages. More than 400 farmers benefited, with strong yield and income outcomes.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+  <section class="project-section">
+
+    <div class="container">
+
+      <div class="project-layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="project-content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            Hope Ever Foundation partnered with
+            the Agricultural Sector Skill Council of India (ASCI)
+            to implement a 36-month Organic Farming Livelihood Program
+            aimed at promoting sustainable agriculture
+            among rural farming communities.
+          </p>
+
+          <p>
+            The initiative focused on strengthening
+            farmers’ knowledge and practical skills
+            through structured training programs,
+            demonstration plots,
+            and ongoing technical support
+            that enabled farmers to transition
+            from conventional farming methods
+            to sustainable organic practices.
+          </p>
+
+          <p>
+            Training modules covered key aspects
+            of organic agriculture including composting,
+            natural pest management,
+            crop rotation,
+            soil health improvement,
+            and organic certification processes.
+          </p>
+
+          <p>
+            Field demonstrations played a major role
+            in showcasing the effectiveness
+            of organic farming techniques,
+            encouraging wider adoption among farmers
+            and building confidence in sustainable methods.
+          </p>
+
+          <p>
+            The program directly benefited
+            more than 400 farmers,
+            many of whom reported
+            up to a 50% increase in crop yields
+            after adopting organic farming practices.
+          </p>
+
+          <p>
+            Improved market linkages further enhanced farmer incomes,
+            as the project facilitated access
+            to premium organic produce markets
+            and connected farmers
+            with buyers interested in sustainable products.
+          </p>
+
+          <p>
+            By reducing dependency on chemical fertilizers and pesticides,
+            the initiative supported long-term soil health,
+            environmental sustainability,
+            and healthier farming ecosystems.
+          </p>
+
+          <p>
+            Beyond increased income,
+            farmers developed greater resilience,
+            diversified livelihood opportunities,
+            and improved community well-being
+            through sustainable agricultural practices.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives-section">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objectives-grid">
+
+              <div class="objective-card">
+                Promote sustainable and environmentally friendly farming practices.
+              </div>
+
+              <div class="objective-card">
+                Train farmers in organic cultivation and certification processes.
+              </div>
+
+              <div class="objective-card">
+                Improve soil health and reduce chemical dependency.
+              </div>
+
+              <div class="objective-card">
+                Strengthen market access for organic produce.
+              </div>
+
+              <div class="objective-card">
+                Enhance farmer incomes and livelihood resilience.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMPACT -->
+
+          <div class="impact-section">
+
+            <h2 class="section-title">
+              Project Impact
+            </h2>
+
+            <div class="impact-grid">
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  400+
+                </div>
+
+                <p>
+                  Farmers Benefited
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  50%
+                </div>
+
+                <p>
+                  Increase in Crop Yield
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  36
+                </div>
+
+                <p>
+                  Months of Program Implementation
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery-section">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
+                alt="Organic farming field"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
+                alt="Farmer training"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                alt="Sustainable agriculture"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html"
+            class="back-btn">
+
+            ← Back to Projects
+
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Organic Farming & Sustainable Livelihoods
+              </li>
+
+              <li>
+                <strong>Duration:</strong>
+                36 Months
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Rural Tamil Nadu
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Rural Farmers
+              </li>
+
+              <li>
+                <strong>Partner Organization:</strong>
+                Agricultural Sector Skill Council of India (ASCI)
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>🌱 Organic Farming</li>
+
+              <li>♻ Sustainable Agriculture</li>
+
+              <li>🌾 Soil Health Management</li>
+
+              <li>🐞 Natural Pest Control</li>
+
+              <li>📈 Market Linkages</li>
+
+              <li>🌍 Environmental Sustainability</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">

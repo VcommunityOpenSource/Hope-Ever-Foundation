@@ -1,24 +1,31 @@
-window.initProjectFilters = function initProjectFilters() {
-  const filterButtons = document.querySelectorAll('[data-filter]');
-  const cards = document.querySelectorAll('[data-sector]');
-  if (!filterButtons.length || !cards.length) {
-    return;
-  }
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
 
-  filterButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      const selected = button.getAttribute('data-filter');
+filterButtons.forEach(button => {
 
-      filterButtons.forEach(function (btn) {
-        btn.classList.remove('active');
-      });
-      button.classList.add('active');
+  button.addEventListener("click", () => {
 
-      cards.forEach(function (card) {
-        const sectors = (card.getAttribute('data-sector') || '').split(',');
-        const shouldShow = selected === 'all' || sectors.includes(selected);
-        card.style.display = shouldShow ? '' : 'none';
-      });
+    document
+      .querySelector(".filter-btn.active")
+      .classList.remove("active");
+
+    button.classList.add("active");
+
+    const filter = button.getAttribute("data-filter");
+
+    projectCards.forEach(card => {
+
+      if (
+        filter === "all" ||
+        card.getAttribute("data-category") === filter
+      ) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+
     });
+
   });
-};
+
+});

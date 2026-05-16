@@ -12,6 +12,282 @@
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
+  <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+
+    .hero-section {
+
+      height: 85vh;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+
+        url("https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    /* =========================================
+       SIDEBAR
+    ========================================= */
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       OBJECTIVES
+    ========================================= */
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    /* =========================================
+       GALLERY
+    ========================================= */
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+  </style>
 </head>
 <body data-page="projects">
   <header class="site-header" id="top">
@@ -38,16 +314,266 @@
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">Surabi Magalir Membattu Iyakkam</h1>
-      <p><strong>Duration: 12 months | SSH, Dindigul</strong></p>
-      <img src="../assets/images/projects/surabi-magalir/cover.jpg" alt="Surabi Magalir Membattu Iyakkam" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>A women-centered program in Dindigul strengthening SHGs through leadership development, financial literacy, enterprise support, and convergence with government schemes and local institutions.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+  <!-- HERO SECTION -->
+
+  <section class="hero-section">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-tag">
+          Women Empowerment & Livelihoods
+        </span>
+
+        <h1 class="hero-title">
+          Surabi Magalir Membattu Iyakkam
+        </h1>
+
+        <p class="hero-description">
+          A women-centered initiative focused on strengthening self-help groups,
+          enhancing financial literacy, promoting enterprise development,
+          and empowering women through collective action and livelihood opportunities.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>
+            ⏳ Duration: 12 Months
+          </span>
+
+          <span>
+            📍 Dindigul District
+          </span>
+
+          <span>
+            🤝 SSH, Dindigul
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
+  <!-- MAIN CONTENT -->
+
+  <section class="project-section">
+
+    <div class="container">
+
+      <div class="project-layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="project-content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            Hope Ever Foundation undertook the baseline assessment
+            and project planning for the Surabi Magalir Membattu Iyakkam initiative,
+            a women-centered program implemented in Dindigul district.
+          </p>
+
+          <p>
+            The project aimed to empower women through collective action,
+            capacity building, and livelihood enhancement by strengthening
+            self-help groups and promoting sustainable economic opportunities.
+          </p>
+
+          <p>
+            The baseline study focused on understanding
+            the socio-economic conditions of women,
+            the operational status of existing SHGs,
+            and the barriers women faced in accessing
+            credit facilities, markets, and social entitlements.
+          </p>
+
+          <p>
+            Based on the findings,
+            a structured project plan was developed
+            to strengthen women’s groups and encourage
+            cluster formation for better networking
+            and collective bargaining power.
+          </p>
+
+          <p>
+            Capacity-building sessions were conducted on
+            leadership development, financial literacy,
+            enterprise management,
+            and livelihood planning.
+            Women were encouraged to identify
+            viable income-generating activities
+            that could improve household income
+            and long-term economic independence.
+          </p>
+
+          <p>
+            The project also facilitated linkages
+            with government welfare schemes,
+            local financial institutions,
+            and community support systems
+            to ensure sustainability and continued growth.
+          </p>
+
+          <p>
+            Through this intervention,
+            women’s participation in household decision-making improved,
+            and their confidence and economic independence
+            were significantly strengthened.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives-section">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objectives-grid">
+
+              <div class="objective-card">
+                Strengthen self-help groups through leadership and capacity building.
+              </div>
+
+              <div class="objective-card">
+                Improve financial literacy and access to credit facilities.
+              </div>
+
+              <div class="objective-card">
+                Promote women-led livelihood and enterprise development.
+              </div>
+
+              <div class="objective-card">
+                Facilitate linkages with government schemes and local institutions.
+              </div>
+
+              <div class="objective-card">
+                Enhance women’s participation in household and community decision-making.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery-section">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop"
+                alt="Women empowerment meeting"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+                alt="SHG training workshop"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop"
+                alt="Women livelihood activities"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html"
+            class="back-btn">
+
+            ← Back to Projects
+
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Women Empowerment & Livelihoods
+              </li>
+
+              <li>
+                <strong>Duration:</strong>
+                12 Months
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Dindigul District
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Women Self-Help Groups
+              </li>
+
+              <li>
+                <strong>Commissioned By:</strong>
+                SSH, Dindigul
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>👩 Women Empowerment</li>
+
+              <li>💰 Financial Literacy</li>
+
+              <li>📈 Enterprise Development</li>
+
+              <li>🤝 SHG Strengthening</li>
+
+              <li>🏛 Government Scheme Linkages</li>
+
+              <li>🌱 Sustainable Livelihoods</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">

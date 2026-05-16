@@ -12,6 +12,295 @@
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
+  <style>
+
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--background);
+      color:var(--text-primary);
+      line-height:1.7;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero{
+      height:85vh;
+
+      background:
+      linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+      ),
+
+      url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop")
+      center/cover no-repeat;
+
+      display:flex;
+      align-items:center;
+      color:white;
+    }
+
+    .hero-content{
+      max-width:850px;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      background:var(--accent-amber);
+      padding:10px 18px;
+      border-radius:50px;
+      font-size:0.9rem;
+      font-weight:bold;
+      margin-bottom:20px;
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      margin-bottom:25px;
+      color:#f0f0f0;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .hero-meta span{
+      background:rgba(255,255,255,0.15);
+      padding:10px 18px;
+      border-radius:50px;
+      backdrop-filter:blur(5px);
+    }
+
+    /* =====================================
+       MAIN SECTION
+    ===================================== */
+
+    .main-section{
+      padding:80px 0;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:40px;
+    }
+
+    .section-title{
+      color:var(--primary-green);
+      font-size:2.2rem;
+      margin-bottom:25px;
+    }
+
+    .content p{
+      color:var(--text-secondary);
+      margin-bottom:20px;
+      font-size:1.03rem;
+    }
+
+    /* =====================================
+       SIDEBAR
+    ===================================== */
+
+    .sidebar-card{
+      background:var(--white);
+      padding:30px;
+      border-radius:20px;
+      border:1px solid var(--border);
+      margin-bottom:25px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .sidebar-card h3{
+      margin-bottom:18px;
+      color:var(--primary-green);
+    }
+
+    .info-list{
+      list-style:none;
+    }
+
+    .info-list li{
+      margin-bottom:14px;
+      color:var(--text-secondary);
+    }
+
+    .info-list strong{
+      color:var(--text-primary);
+    }
+
+    /* =====================================
+       OBJECTIVES
+    ===================================== */
+
+    .objectives{
+      margin-top:60px;
+    }
+
+    .objective-grid{
+      display:grid;
+      gap:15px;
+      margin-top:25px;
+    }
+
+    .objective-card{
+      background:var(--white);
+      border-left:5px solid var(--accent-amber);
+      padding:18px;
+      border-radius:14px;
+      border:1px solid var(--border);
+    }
+
+    /* =====================================
+       IMPACT
+    ===================================== */
+
+    .impact{
+      margin-top:70px;
+    }
+
+    .impact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:25px;
+    }
+
+    .impact-card{
+      background:var(--white);
+      border-radius:18px;
+      padding:30px;
+      text-align:center;
+      border:1px solid var(--border);
+    }
+
+    .impact-number{
+      font-size:2.5rem;
+      font-weight:bold;
+      color:var(--primary-green);
+      margin-bottom:10px;
+    }
+
+    /* =====================================
+       GALLERY
+    ===================================== */
+
+    .gallery{
+      margin-top:70px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:25px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:18px;
+      transition:0.3s;
+    }
+
+    .gallery-grid img:hover{
+      transform:scale(1.03);
+    }
+
+    /* =====================================
+       BUTTON
+    ===================================== */
+
+    .back-btn{
+      display:inline-block;
+      margin-top:50px;
+      background:var(--primary-green);
+      color:white;
+      text-decoration:none;
+      padding:14px 24px;
+      border-radius:50px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .back-btn:hover{
+      background:#0a5743;
+    }
+
+    /* =====================================
+       RESPONSIVE
+    ===================================== */
+
+    @media(max-width:1000px){
+
+      .layout{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:2.8rem;
+      }
+
+      .gallery-grid,
+      .impact-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        height:auto;
+        padding:80px 0;
+      }
+
+      .hero h1{
+        font-size:2.2rem;
+      }
+
+      .gallery-grid,
+      .impact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-meta{
+        flex-direction:column;
+      }
+    }
+
+  </style>
 </head>
 <body data-page="projects">
   <header class="site-header" id="top">
@@ -38,16 +327,318 @@
   </div>
 </header>
 
-  <main class="section">
-    <div class="container card" style="padding:1.2rem">
-      <p class="section-subtitle">Project Detail</p>
-      <h1 class="section-title">Core Employability & Add-on Programs</h1>
-      <p><strong>Partner: BIRDS</strong></p>
-      <img src="../assets/images/projects/employability/cover.jpg" alt="Core Employability & Add-on Programs" style="border-radius:12px;border:1px solid var(--c-border);margin:0.8rem 0 1rem;max-height:420px;object-fit:cover;width:100%;" />
-      <p>Add-on modules in soft skills, counseling, Tally, design, and driving that improve workforce confidence, role readiness, and long-term employability resilience for trainees.</p>
-      <p><a class="btn btn-primary" href="../projects.html">Back to All Projects</a></p>
+<section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-tag">
+          Employability & Career Readiness
+        </span>
+
+        <h1>
+          Core Employability & Add-on Programs
+        </h1>
+
+        <p>
+          Holistic employability initiatives focused on soft skills,
+          career counselling, Tally, design, driving, and workplace readiness
+          to prepare youth for long-term professional success.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>📍 Tamil Nadu</span>
+
+          <span>🤝 Hope Ever Foundation & BIRDS</span>
+
+          <span>🚗 Career-Oriented Skill Programs</span>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
+  <!-- MAIN -->
+
+  <section class="main-section">
+
+    <div class="container">
+
+      <div class="layout">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="content">
+
+          <h2 class="section-title">
+            Project Overview
+          </h2>
+
+          <p>
+            Recognizing that technical skills alone are not sufficient
+            for long-term professional success,
+            Hope Ever Foundation Trust and BIRDS
+            introduced a series of employability-focused add-on programs
+            designed to prepare youth for modern workplace environments.
+          </p>
+
+          <p>
+            These initiatives included soft-skills training,
+            career counselling,
+            employee engagement programs,
+            and workplace readiness modules
+            aimed at building confidence,
+            communication,
+            adaptability,
+            and professionalism among trainees.
+          </p>
+
+          <p>
+            Specialized Tally and design training modules
+            prepared students for opportunities
+            in accounting,
+            office administration,
+            business support,
+            and creative industries.
+          </p>
+
+          <p>
+            In addition,
+            four-wheeler driving courses
+            connected youth to high-demand employment opportunities
+            in logistics,
+            transportation,
+            delivery services,
+            and mobility sectors.
+          </p>
+
+          <p>
+            Career counselling sessions
+            and exposure visits
+            created direct interaction opportunities
+            with industry professionals,
+            employers,
+            and workplace environments.
+          </p>
+
+          <p>
+            These interactions helped trainees
+            reduce workplace anxiety,
+            understand career pathways,
+            and develop realistic expectations
+            regarding employment opportunities and work culture.
+          </p>
+
+          <p>
+            Collectively,
+            these programs bridged the gap
+            between technical training
+            and real-world employability,
+            ensuring that youth were not only employable,
+            but also adaptable,
+            confident,
+            resilient,
+            and prepared for diverse professional settings.
+          </p>
+
+          <!-- OBJECTIVES -->
+
+          <div class="objectives">
+
+            <h2 class="section-title">
+              Key Objectives
+            </h2>
+
+            <div class="objective-grid">
+
+              <div class="objective-card">
+                Strengthen communication and workplace readiness skills.
+              </div>
+
+              <div class="objective-card">
+                Prepare youth for accounting, logistics, and creative careers.
+              </div>
+
+              <div class="objective-card">
+                Provide career counselling and industry exposure opportunities.
+              </div>
+
+              <div class="objective-card">
+                Reduce workplace anxiety and improve professional confidence.
+              </div>
+
+              <div class="objective-card">
+                Bridge the gap between technical training and employability.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMPACT -->
+
+          <div class="impact">
+
+            <h2 class="section-title">
+              Program Impact
+            </h2>
+
+            <div class="impact-grid">
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  1000+
+                </div>
+
+                <p>
+                  Youth Benefited Through Employability Programs
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  4+
+                </div>
+
+                <p>
+                  Career-Focused Add-on Training Modules
+                </p>
+
+              </div>
+
+              <div class="impact-card">
+
+                <div class="impact-number">
+                  60%
+                </div>
+
+                <p>
+                  Improved Placement Readiness Among Participants
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- GALLERY -->
+
+          <div class="gallery">
+
+            <h2 class="section-title">
+              Project Gallery
+            </h2>
+
+            <div class="gallery-grid">
+
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+                alt="Career counselling session"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
+                alt="Office and employability training"
+              >
+
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                alt="Tally and computer training"
+              >
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+
+          <a href="../projects.html" class="back-btn">
+            ← Back to Projects
+          </a>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Project Information
+            </h3>
+
+            <ul class="info-list">
+
+              <li>
+                <strong>Project Type:</strong>
+                Employability & Career Readiness
+              </li>
+
+              <li>
+                <strong>Location:</strong>
+                Tamil Nadu
+              </li>
+
+              <li>
+                <strong>Target Group:</strong>
+                Youth & Skill Trainees
+              </li>
+
+              <li>
+                <strong>Partner Organization:</strong>
+                BIRDS
+              </li>
+
+              <li>
+                <strong>Focus:</strong>
+                Workplace Readiness & Career Development
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="sidebar-card">
+
+            <h3>
+              Focus Areas
+            </h3>
+
+            <ul class="info-list">
+
+              <li>🗣 Soft Skills Training</li>
+
+              <li>📊 Tally & Accounting Skills</li>
+
+              <li>🎨 Design & Creative Skills</li>
+
+              <li>🚗 Four-Wheeler Driving Courses</li>
+
+              <li>💼 Career Counselling</li>
+
+              <li>🤝 Industry Exposure Visits</li>
+
+            </ul>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
   <footer class="site-footer">
   <div class="container footer-grid">
     <section class="footer-col footer-brand-col">
