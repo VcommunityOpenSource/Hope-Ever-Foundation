@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Land Holding Pattern & Horticulture Prospects, Javvadhu Hills - Hope Ever Foundation</title>
-  <meta name="description" content="Land Holding Pattern & Horticulture Prospects, Javvadhu Hills project by Hope Ever Foundation." />
+
+  <title>
+    Land Holding Pattern & Horticulture Prospects, Javvadhu Hills - Hope Ever Foundation
+  </title>
+
+  <meta
+    name="description"
+    content="Land Holding Pattern & Horticulture Prospects, Javvadhu Hills project by Hope Ever Foundation."
+  />
+
   <link rel="icon" href="../assets/images/common/favicon.ico" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Merriweather:wght@700;900&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/footer.css" />
-  <!-- Global Styles -->
-  <link rel="stylesheet" href="../css/global.css" />
-  <link rel="stylesheet" href="../css/navbar.css" />
-  <link rel="stylesheet" href="../css/footer.css" />
+
   <style>
+
     :root {
       --primary-green: #0F6E56;
       --accent-amber: #D4872A;
@@ -46,31 +58,40 @@
       margin: auto;
     }
 
-    /* HERO SECTION */
+    /* =====================================================
+       HERO SECTION
+    ===================================================== */
 
     .project-hero {
       position: relative;
-      height: 70vh;
-      background: linear-gradient(
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
           rgba(0, 0, 0, 0.55),
           rgba(0, 0, 0, 0.55)
         ),
-        url("../assets/images/projects/javvadhu-hills/cover.jpg")
-          center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1800&auto=format&fit=crop");
 
-      display: flex;
-      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
       color: var(--white);
     }
 
     .hero-content {
       max-width: 700px;
+      padding: 6rem 0;
     }
 
     .project-tag {
       display: inline-block;
       background-color: var(--accent-amber);
-      color: white;
+      color: var(--white);
       padding: 8px 18px;
       border-radius: 50px;
       font-size: 0.9rem;
@@ -79,29 +100,32 @@
     }
 
     .project-title {
-      font-size: 3rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
+      font-size: 3.4rem;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      font-family: "Merriweather", serif;
     }
 
     .project-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 1rem;
-      font-size: 0.95rem;
+      gap: 1rem;
     }
 
     .project-meta span {
       background-color: rgba(255,255,255,0.15);
-      padding: 8px 14px;
-      border-radius: 30px;
-      backdrop-filter: blur(4px);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
     }
 
-    /* CONTENT SECTION */
+    /* =====================================================
+       MAIN CONTENT SECTION
+    ===================================================== */
 
     .project-section {
+      background-color: var(--background);
       padding: 5rem 0;
     }
 
@@ -115,6 +139,7 @@
       color: var(--primary-green);
       font-size: 2rem;
       margin-bottom: 1.5rem;
+      font-family: "Merriweather", serif;
     }
 
     .project-content p {
@@ -123,7 +148,9 @@
       font-size: 1.05rem;
     }
 
-    /* SIDEBAR */
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
 
     .sidebar-card {
       background-color: var(--white);
@@ -152,7 +179,9 @@
       color: var(--text-primary);
     }
 
-    /* OBJECTIVES */
+    /* =====================================================
+       OBJECTIVES
+    ===================================================== */
 
     .objectives {
       margin-top: 3rem;
@@ -172,7 +201,9 @@
       border: 1px solid var(--border);
     }
 
-    /* GALLERY */
+    /* =====================================================
+       GALLERY
+    ===================================================== */
 
     .gallery-section {
       margin-top: 4rem;
@@ -197,13 +228,15 @@
       transform: scale(1.03);
     }
 
-    /* BUTTON */
+    /* =====================================================
+       BUTTON
+    ===================================================== */
 
     .back-btn {
       display: inline-block;
       margin-top: 3rem;
       background-color: var(--primary-green);
-      color: white;
+      color: var(--white);
       text-decoration: none;
       padding: 14px 24px;
       border-radius: 50px;
@@ -215,7 +248,9 @@
       background-color: #0b5744;
     }
 
-    /* RESPONSIVE */
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
 
     @media (max-width: 900px) {
 
@@ -224,7 +259,7 @@
       }
 
       .project-title {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
       }
 
       .gallery-grid {
@@ -235,7 +270,7 @@
     @media (max-width: 600px) {
 
       .project-hero {
-        height: 60vh;
+        min-height: 60vh;
       }
 
       .project-title {
@@ -251,36 +286,136 @@
         gap: 0.8rem;
       }
     }
+
+
+    /* Hero readability overlay keeps existing images while improving text contrast. */
+    .hero-section,
+    .hero,
+    .project-hero {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-section::before,
+    .hero::before,
+    .project-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        135deg,
+        rgba(3, 24, 18, 0.82) 0%,
+        rgba(8, 52, 40, 0.72) 45%,
+        rgba(0, 0, 0, 0.78) 100%
+      );
+    }
+
+    .hero-section > .container,
+    .hero > .container,
+    .project-hero > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-meta,
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .hero-title,
+    .project-title,
+    .hero h1 {
+      color: #ffffff;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.68), 0 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-description,
+    .hero p {
+      color: rgba(255, 255, 255, 0.96);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.64), 0 1px 2px rgba(0, 0, 0, 0.74);
+    }
+
+    .hero-tag,
+    .project-tag {
+      color: #ffffff;
+      background-color: rgba(212, 135, 42, 0.96);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.38);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-meta span,
+    .project-meta span {
+      color: #ffffff;
+      background-color: rgba(8, 35, 28, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
   </style>
 </head>
+
 <body data-page="projects">
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
   <header class="site-header" id="top">
-  <div class="container nav-wrap">
-    <a class="brand" href="../index.html" aria-label="Hope Ever Foundation Home">
-      <img src="../assets/images/common/circular_logo-removebg-preview.png" alt="Hope Ever Foundation logo" class="brand-logo" />
-      <span class="brand-text">Hope Ever Foundation</span>
-    </a>
 
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="container nav-wrap">
 
-    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-      <a href="../index.html" data-nav="home">Home</a>
-      <a href="../about.html" data-nav="about">About Us</a>
-      <a href="../projects.html" data-nav="projects">Projects</a>
-      <a href="../programs.html" data-nav="programs">Programs &amp; Initiatives</a>
-      <a href="../gallery.html" data-nav="gallery">Gallery</a>
-      <a href="../contact.html" data-nav="contact">Contact Us</a>
-    </nav>
-  </div>
- 
-</header>
+      <a class="brand" href="../index.html" aria-label="Hope Ever Foundation Home">
+        <img
+          src="../assets/images/common/circular_logo-removebg-preview.png"
+          alt="Hope Ever Foundation logo"
+          class="brand-logo"
+        />
+        <span class="brand-text">
+          Hope Ever Foundation
+        </span>
+      </a>
 
-  <main class="project-section">
-     <div class="container">
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        class="primary-nav"
+        id="primary-nav"
+        aria-label="Main navigation"
+      >
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="../about.html" data-nav="about">About Us</a>
+        <a href="../projects.html" data-nav="projects">Projects</a>
+        <a href="../programs.html" data-nav="programs">Programs & Initiatives</a>
+        <a href="../gallery.html" data-nav="gallery">Gallery</a>
+        <a href="../contact.html" data-nav="contact">Contact Us</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- =====================================================
+       HERO SECTION
+  ===================================================== -->
+
+  <section class="project-hero">
+
+    <div class="container">
+
       <div class="hero-content">
 
         <span class="project-tag">
@@ -298,13 +433,23 @@
         </div>
 
       </div>
+
     </div>
+
+  </section>
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ===================================================== -->
+
+  <main class="project-section">
 
     <div class="container">
 
       <div class="project-grid">
 
         <!-- LEFT CONTENT -->
+
         <div class="project-content">
 
           <h2 class="section-title">
@@ -340,6 +485,7 @@
           </p>
 
           <!-- OBJECTIVES -->
+
           <div class="objectives">
 
             <h2 class="section-title">
@@ -347,6 +493,7 @@
             </h2>
 
             <ul class="objective-list">
+
               <li>
                 Assess landholding patterns and farming practices among tribal communities.
               </li>
@@ -366,11 +513,13 @@
               <li>
                 Promote sustainable livelihood development in Javvadhu Hills.
               </li>
+
             </ul>
 
           </div>
 
           <!-- GALLERY -->
+
           <div class="gallery-section">
 
             <h2 class="section-title">
@@ -380,19 +529,19 @@
             <div class="gallery-grid">
 
               <img
-                src="../assets/images/projects/javvadhu-hills/img-01.jpg"
-                alt="Farmers in Javvadhu Hills"
-              >
+  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+  alt="Javvadhu Hills landscape"
+>
+
+             <img
+  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
+  alt="Agriculture and horticulture farming"
+>
 
               <img
-                src="../assets/images/projects/javvadhu-hills/img-02.jpg"
-                alt="Horticulture field assessment"
-              >
-
-              <img
-                src="../assets/images/projects/javvadhu-hills/img-03.jpg"
-                alt="Community consultation meeting"
-              >
+  src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1200&auto=format&fit=crop"
+  alt="Community and tribal livelihood development"
+>
 
             </div>
 
@@ -405,6 +554,7 @@
         </div>
 
         <!-- SIDEBAR -->
+
         <aside>
 
           <div class="sidebar-card">
@@ -467,51 +617,127 @@
     </div>
 
   </main>
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
   <footer class="site-footer">
-  <div class="container footer-grid">
-    <section class="footer-col footer-brand-col">
-      <img src="../assets/images/common/circular_logo-removebg-preview.png" alt="Hope Ever Foundation logo" class="footer-logo" />
-      <p class="footer-tagline">Empowering marginalized communities through sustainable livelihoods, education, and dignity.</p>
-    </section>
 
-    <section class="footer-col">
-      <h3>Navigation</h3>
-      <button class="btn back-to-top" type="button">Back to Top</button>
-    </section>
+    <div class="container footer-grid">
 
-    <section class="footer-col">
-      <h3>Contact Details</h3>
-      <p>No. 12, Gandhi Nagar 3rd Street, Adyar, Chennai, Tamil Nadu 600020, India</p>
-      <p>Phone: +91 00000 00000 (to be updated)</p>
-      <p>Email: info@hopeeverfoundation.org (to be updated)</p>
-      <p>Instagram: @hopeeverfoundation (to be updated)</p>
-    </section>
+      <section class="footer-col footer-brand-col">
 
-    <section class="footer-col">
-      <h3>Social &amp; External</h3>
-      <div class="footer-socials" aria-label="Social and external links">
-        <a href="https://instagram.com/hopeeverfoundation" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <img src="../assets/images/icons/instagram.svg" alt="Instagram icon" />
-        </a>
-        <a href="mailto:info@hopeeverfoundation.org" aria-label="Email">
-          <img src="../assets/images/icons/mail.svg" alt="Email icon" />
-        </a>
-        <a href="tel:+910000000000" aria-label="Phone">
-          <img src="../assets/images/icons/phone.svg" alt="Phone icon" />
-        </a>
-      </div>
-    </section>
-  </div>
+        <img
+          src="../assets/images/common/circular_logo-removebg-preview.png"
+          alt="Hope Ever Foundation logo"
+          class="footer-logo"
+        />
 
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2026 Hope Ever Foundation. All rights reserved.</p>
+        <p class="footer-tagline">
+          Empowering marginalized communities through sustainable livelihoods, education, and dignity.
+        </p>
+
+      </section>
+
+      <section class="footer-col">
+
+        <h3>
+          Navigation
+        </h3>
+
+        <button class="btn back-to-top" type="button">
+          Back to Top
+        </button>
+
+      </section>
+
+      <section class="footer-col">
+
+        <h3>
+          Contact Details
+        </h3>
+
+        <p>
+          No. 12, Gandhi Nagar 3rd Street, Adyar, Chennai, Tamil Nadu 600020, India
+        </p>
+
+        <p>
+          Phone: +91 00000 00000 (to be updated)
+        </p>
+
+        <p>
+          Email: info@hopeeverfoundation.org (to be updated)
+        </p>
+
+        <p>
+          Instagram: @hopeeverfoundation (to be updated)
+        </p>
+
+      </section>
+
+      <section class="footer-col">
+
+        <h3>
+          Social & External
+        </h3>
+
+        <div class="footer-socials" aria-label="Social and external links">
+
+          <a
+            href="https://instagram.com/hopeeverfoundation"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <img
+              src="../assets/images/icons/instagram.svg"
+              alt="Instagram icon"
+            />
+          </a>
+
+          <a
+            href="mailto:info@hopeeverfoundation.org"
+            aria-label="Email"
+          >
+            <img
+              src="../assets/images/icons/mail.svg"
+              alt="Email icon"
+            />
+          </a>
+
+          <a
+            href="tel:+910000000000"
+            aria-label="Phone"
+          >
+            <img
+              src="../assets/images/icons/phone.svg"
+              alt="Phone icon"
+            />
+          </a>
+
+        </div>
+
+      </section>
+
     </div>
-  </div>
-</footer>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <p>
+          &copy; 2026 Hope Ever Foundation. All rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
 
   <script src="../js/navbar.js"></script>
   <script src="../js/main.js"></script>
+
 </body>
 </html>
-

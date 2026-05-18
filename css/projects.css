@@ -45,15 +45,16 @@
   ========================================= */
   
   .hero {
+    /* Refined NGO-style hero image and overlay for stronger readability. */
     background:
       linear-gradient(
-        rgba(15, 110, 86, 0.85),
-        rgba(15, 110, 86, 0.85)
+        135deg,
+        rgba(10, 56, 43, 0.92) 0%,
+        rgba(15, 110, 86, 0.82) 48%,
+        rgba(8, 37, 29, 0.72) 100%
       ),
-  
-      url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop")
+      url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1800&auto=format&fit=crop")
       center/cover no-repeat;
-  
     color: white;
     text-align: center;
     padding: 120px 20px;
@@ -128,18 +129,32 @@
     border-radius: 22px;
     overflow: hidden;
     border: 1px solid var(--border);
-    transition: 0.35s ease;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
   }
   
-  .project-card:hover {
+  .project-card:hover,
+  .project-card:focus-visible {
     transform: translateY(-8px);
-    box-shadow: 0 14px 35px rgba(0,0,0,0.1);
+    border-color: rgba(15, 110, 86, 0.25);
+    box-shadow: 0 16px 38px rgba(15, 110, 86, 0.14);
+    outline: none;
+  }
+
+  .project-card:focus-visible {
+    box-shadow: 0 0 0 4px rgba(212, 135, 42, 0.22), 0 16px 38px rgba(15, 110, 86, 0.14);
   }
   
   .project-card img {
     height: 240px;
     object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+
+  .project-card:hover img,
+  .project-card:focus-visible img {
+    transform: scale(1.04);
   }
   
   .project-content {
