@@ -15,12 +15,14 @@
   font-size: 0.95rem;
   color: #ffe8c8;
   margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
 }
 
 .footer-col p {
   color: rgba(255, 255, 255, 0.88);
   margin: 0.3rem 0;
   font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .footer-logo {
@@ -36,17 +38,49 @@
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.93rem;
   max-width: 310px;
+  line-height: 1.5;
 }
 
-.back-to-top {
-  background: #fff;
-  color: var(--c-primary-strong);
-  border: 0;
+/* Quick Links Styling - NEW */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 0.92rem;
+}
+
+.footer-links a:hover {
+  color: #ffe8c8;
+  transform: translateX(4px);
+}
+
+/* Address Styling - UPDATED */
+.footer-address p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.footer-address strong {
+  color: #ffe8c8;
+  font-weight: 600;
+}
+
+/* Social Icons - UPDATED */
 .footer-socials {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .footer-socials a {
@@ -57,14 +91,32 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-socials img {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   filter: brightness(0) invert(1);
 }
 
+/* Footer Note - NEW */
+.footer-note {
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  font-size: 0.8rem;
+  color: #ffe8c8;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   padding: 0.95rem 0;
@@ -76,9 +128,11 @@
   font-size: 0.86rem;
 }
 
+/* Responsive Design */
 @media (max-width: 980px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -86,5 +140,24 @@
   .footer-grid {
     grid-template-columns: 1fr;
     padding: 2.2rem 0;
+    text-align: center;
+  }
+  
+  .footer-tagline {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-links a:hover {
+    transform: translateX(0);
+  }
+  
+  .footer-socials {
+    justify-content: center;
+  }
+  
+  .footer-note {
+    text-align: center;
   }
 }
