@@ -63,9 +63,7 @@ Each file is a full detail page for one project.
 | child-rights.html         | Child Rights Awareness (CECOWOR & ACA Denmark)    |
 | women-skill.html          | Women Empowerment through Skill Development       |
 | agarbatti.html            | Agarbatti & Home-based Livelihoods                |
-| step-youth.html           | SMILE Twin e-Learning Programme (STeP)            |
-| healthcare-bfsi.html      | Healthcare & BFSI Skill Training                  |
-| employability.html        | Core Employability & Add-on Programs              |
+| employability.html        | Core Employability & Add-on Programs (EDII)       |
 
 ---
 
@@ -244,9 +242,7 @@ Projects list (slug → title):
   child-rights      → Child Rights Awareness                         [Child Rights]
   women-skill       → Women Empowerment through Skill Development    [Women, Skill Development]
   agarbatti         → Agarbatti & Home-based Livelihoods             [Women, Livelihoods]
-  step-youth        → SMILE Twin e-Learning Programme (STeP)         [Skill Development]
-  healthcare-bfsi   → Healthcare & BFSI Skill Training               [Health, Skill Development]
-  employability     → Core Employability & Add-on Programs           [Skill Development]
+  employability     → Core Employability & Add-on Programs (EDII)       [Skill Development]
 
 ---
 
@@ -359,7 +355,6 @@ Five thematic sections, each with icon, title, and paragraph:
   NSDC                              — Skill training (6+ year partnership)
   ASCI                              — Organic farming livelihood program
   EDII                              — Entrepreneurship and enterprise support
-  SMILE Foundation                  — Youth e-learning & skill development (STeP)
   Manos Unidas, Spain               — Agricultural Training Center funding
   Child Aid ACA, Denmark            — Child rights awareness program
   CECOWOR                           — Child rights project co-implementation

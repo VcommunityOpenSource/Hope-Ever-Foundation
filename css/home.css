@@ -66,16 +66,23 @@
   min-height: 340px;
 }
 
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1rem;
+.intro-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  align-items: center;
 }
 
-.mission-vision {
+.intro-who {
+  max-width: 850px;
+}
+
+.mission-vision-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .mission-vision article {
@@ -103,23 +110,24 @@
 }
 
 .partner-strip {
+  padding: 5rem 0; /* Increased padding for more vertical space */
+  background-color: var(--white); /* White background for visibility */
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-top: 2rem; /* Added margin to separate from previous section */
   overflow: hidden;
-  border-top: 1px solid var(--c-border);
-  border-bottom: 1px solid var(--c-border);
-  background: #fff;
-  padding: 1rem 0;
 }
 
 .partner-track {
   display: flex;
-  gap: 1.3rem;
+  gap: 2rem; /* Increased gap between logos */
   width: max-content;
   animation: partnerSlide 26s linear infinite;
 }
 
 .partner-logo {
-  width: 140px;
-  height: 62px;
+  width: 200px; /* Increased width of the logo card */
+  height: 100px; /* Increased height of the logo card */
   padding: 0.5rem;
   border: 1px solid var(--c-border);
   border-radius: 10px;
@@ -127,11 +135,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease; /* Added transition for hover effect */
 }
 
 .partner-logo img {
-  max-height: 36px;
+  max-height: 80px; /* Adjusted image height to fit new card size */
   object-fit: contain;
+  margin: 0 30px; /* Adjusted margin for spacing within the track */
+  transition: transform 0.3s ease; /* Added transition for hover effect */
+}
+
+.partner-logo:hover {
+  transform: scale(1.05); /* Slightly scale up the card on hover */
+}
+
+.partner-logo img:hover {
+  transform: scale(1.1); /* Slightly scale up the image on hover */
 }
 
 @keyframes partnerSlide {
@@ -151,8 +170,8 @@
 
 @media (max-width: 860px) {
   .hero-grid,
-  .intro-grid,
-  .mission-vision {
+  .intro-stack,
+  .mission-vision-grid {
     grid-template-columns: 1fr;
   }
 
