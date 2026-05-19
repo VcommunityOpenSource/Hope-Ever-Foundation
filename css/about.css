@@ -27,20 +27,71 @@
   background: #fff;
   border-radius: var(--radius);
   border: 1px solid var(--c-border);
-  padding: 1rem;
+  padding: 1.5rem;
 }
+
+.map-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.map-container {
+  flex: 0 0 auto;
+}
+
 
 .district-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.8rem;
+  gap: 0.6rem;
+  align-content: center;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .map-svg {
-  width: 100%;
-  max-width: 450px;
-  margin-inline: auto;
+  width: 350px;
+  display: block;
+}
+
+
+@media (max-width: 600px) {
+  .map-layout {
+    flex-direction: column;
+  }
+  .map-svg {
+    width: 100%;
+    max-width: 300px;
+    margin-inline: auto;
+  }
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid #0f6e56;
+  color: #0f6e56;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: #1a6d58;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.chip.active {
+  background: #bd7824;
+  border-color: #d4872a;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .recognition-grid {

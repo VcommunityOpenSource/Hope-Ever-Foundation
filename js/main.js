@@ -83,3 +83,39 @@
     initModules();
   });
 })();
+
+// ============================================
+// FLOATING BACK TO TOP BUTTON - Global Component
+// ============================================
+(function() {
+    // Create button element
+    const scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-top-btn';
+    scrollBtn.id = 'scrollTopBtn';
+    scrollBtn.setAttribute('aria-label', 'Back to top');
+    scrollBtn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    `;
+    
+    // Add to page
+    document.body.appendChild(scrollBtn);
+    
+    // Show/hide based on scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+    
+    // Scroll to top when clicked
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
