@@ -24,9 +24,134 @@
 /* ==========================================================================
    TEAM INTERACTIVE TABS SYSTEM (PURE CSS)
    ========================================================================== */
+
+/* TEAM SECTION */
+
+.team-block {
+  margin-top: 2rem;
+  padding: 1.8rem;
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Different colors for each section */
+
+.team-block:nth-of-type(1) {
+  background: #eef4ec; /* soft green */
+}
+
+.team-block:nth-of-type(2) {
+  background: #f4efe6; /* sand */
+}
+
+.team-block:nth-of-type(3) {
+  background: #f3ede7; /* warm beige */
+}
+
+/* SECTION TITLES */
+
+.team-block-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #184d3b;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.team-block-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 90px;
+  height: 3px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #184d3b, #b08968);
+}
+
+/* GRID */
+
+.simple-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem; /* reduced spacing */
+}
+
+/* CARD */
+
+.simple-member-card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 1.2rem 1rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.28s ease;
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.simple-member-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.08),
+    0 2px 6px rgba(24,77,59,0.08);
+}
+
+/* NAME */
+
+.simple-member-card h4 {
+  margin-bottom: 0.45rem;
+  color: #184d3b;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ROLE */
+
+.simple-member-card p {
+  color: #7a5c3e;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .team-block {
+    padding: 1.2rem;
+  }
+
+  .simple-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .team-block-title {
+    font-size: 1.5rem;
+  }
+
+  .simple-member-card {
+    min-height: 105px;
+    padding: 1rem 0.8rem;
+  }
+
+  .simple-member-card h4 {
+    font-size: 1rem;
+  }
+
+}
+
 .team-tabs-container {
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: .5rem;
 }
 
 /* Hide the native radio buttons completely */

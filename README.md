@@ -62,8 +62,7 @@ Each file is a full detail page for one project.
 | organic-farm.html         | Organic Farming Livelihood Program (ASCI)         |
 | child-rights.html         | Child Rights Awareness (CECOWOR & ACA Denmark)    |
 | women-skill.html          | Women Empowerment through Skill Development       |
-| agarbatti.html            | Agarbatti & Home-based Livelihoods                |
-| employability.html        | Core Employability & Add-on Programs (EDII)       |
+| agarbatti.html            | Core Employability & Add-on Programs (EDII)       |
 
 ---
 
@@ -241,8 +240,7 @@ Projects list (slug → title):
   organic-farm      → Organic Farming Livelihood Program             [Agriculture, Livelihoods]
   child-rights      → Child Rights Awareness                         [Child Rights]
   women-skill       → Women Empowerment through Skill Development    [Women, Skill Development]
-  agarbatti         → Agarbatti & Home-based Livelihoods             [Women, Livelihoods]
-  employability     → Core Employability & Add-on Programs (EDII)       [Skill Development]
+  agarbatti         → Value Added Products using Cow Dung            [Women, Livelihoods]ant]
 
 ---
 
