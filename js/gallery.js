@@ -1,5 +1,4 @@
 window.initGallery = function initGallery() {
-  const yearButtons = document.querySelectorAll('[data-year-filter]');
   const categoryButtons = document.querySelectorAll('[data-category-filter]');
   const items = document.querySelectorAll('.gallery-item');
   const lightbox = document.querySelector('.lightbox');
@@ -9,11 +8,10 @@ window.initGallery = function initGallery() {
   const prevButton = document.querySelector('.lightbox-prev');
   const nextButton = document.querySelector('.lightbox-next');
 
-  if (!yearButtons.length || !categoryButtons.length || !items.length) {
+  if (!categoryButtons.length || !items.length) {
     return;
   }
 
-  let activeYear = 'all';
   let activeCategory = 'all';
   let visibleItems = Array.from(items);
   let currentIndex = 0;
@@ -21,12 +19,10 @@ window.initGallery = function initGallery() {
   const applyFilter = function () {
     visibleItems = [];
     items.forEach(function (item) {
-      const itemYear = item.getAttribute('data-year');
       const itemCategory = item.getAttribute('data-category');
 
-      const yearPass = activeYear === 'all' || itemYear === activeYear;
       const categoryPass = activeCategory === 'all' || itemCategory === activeCategory;
-      const show = yearPass && categoryPass;
+      const show = categoryPass;
 
       item.style.display = show ? '' : 'none';
       if (show) {
@@ -34,17 +30,6 @@ window.initGallery = function initGallery() {
       }
     });
   };
-
-  yearButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      yearButtons.forEach(function (btn) {
-        btn.classList.remove('active');
-      });
-      button.classList.add('active');
-      activeYear = button.getAttribute('data-year-filter');
-      applyFilter();
-    });
-  });
 
   categoryButtons.forEach(function (button) {
     button.addEventListener('click', function () {

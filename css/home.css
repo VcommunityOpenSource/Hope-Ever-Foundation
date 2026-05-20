@@ -110,11 +110,11 @@
 }
 
 .partner-strip {
-  padding: 5rem 0; /* Increased padding for more vertical space */
+  padding: 2.5rem 0 4.5rem 0; /* Reduced top padding since there is a partner header now */
   background-color: var(--white); /* White background for visibility */
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin-top: 2rem; /* Added margin to separate from previous section */
+  margin-top: 0; /* Brought section closer to the preceding section */
   overflow: hidden;
 }
 

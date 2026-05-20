@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Millet & Value-Added Food Training Initiative - Hope Ever Foundation</title>
+  <meta name="description" content="Community-based training initiative promoting millet cultivation, nutrition awareness, and value-added food processing among rural farmers." />
+  <link rel="icon" href="../assets/images/common/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <style>
+    :root {
+      --primary-green: #0F6E56;
+      --accent-amber: #D4872A;
+      --background: #F9F6F1;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5A5A;
+      --white: #FFFFFF;
+      --border: #E2DDD6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .hero-section {
+      height: 80vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url("https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--accent-amber);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta span {
+      background-color: rgba(255,255,255,0.15);
+      padding: 10px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      font-size: 0.95rem;
+    }
+
+    .project-section {
+      padding: 5rem 0;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.03rem;
+    }
+
+    .sidebar-card {
+      background-color: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 1.2rem;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    .objectives-section {
+      margin-top: 4rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .objective-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--accent-amber);
+      padding: 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .impact-section {
+      margin-top: 5rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .impact-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      background-color: var(--primary-green);
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background-color: #0a5743;
+    }
+
+    @media (max-width: 1000px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .gallery-grid, .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        height: auto;
+        padding: 6rem 0;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .gallery-grid, .impact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+
+    .hero-section {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        135deg,
+        rgba(3, 24, 18, 0.82) 0%,
+        rgba(8, 52, 40, 0.72) 45%,
+        rgba(0, 0, 0, 0.78) 100%
+      );
+    }
+
+    .hero-section > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      color: #ffffff;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.68), 0 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-description {
+      color: rgba(255, 255, 255, 0.96);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.64), 0 1px 2px rgba(0, 0, 0, 0.74);
+    }
+
+    .hero-tag {
+      color: #ffffff;
+      background-color: rgba(212, 135, 42, 0.96);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.38);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-meta span {
+      color: #ffffff;
+      background-color: rgba(8, 35, 28, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body data-page="projects">
+  <header class="site-header" id="top">
+  <div class="container nav-wrap">
+    <a class="brand" href="../index.html" aria-label="Hope Ever Foundation Home">
+      <img src="../assets/images/common/circular_logo-removebg-preview.png" alt="Hope Ever Foundation logo" class="brand-logo" />
+      <span class="brand-text">Hope Ever Foundation</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="../index.html" data-nav="home">Home</a>
+      <a href="../about.html" data-nav="about">About Us</a>
+      <a href="../projects.html" data-nav="projects">Projects</a>
+      <a href="../programs.html" data-nav="programs">Programs &amp; Initiatives</a>
+      <a href="../gallery.html" data-nav="gallery">Gallery</a>
+      <a href="../contact.html" data-nav="contact">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">Agriculture &amp; Livelihoods</span>
+        <h1 class="hero-title">Millet &amp; Value-Added Food Training Initiative</h1>
+        <p class="hero-description">Community-based training initiative promoting millet cultivation, nutrition awareness, and value-added food processing among rural farmers and women groups.</p>
+        <div class="hero-meta">
+          <span>📍 Tamil Nadu Districts</span>
+          <span>📅 Livelihood Program</span>
+          <span>👥 SHGs &amp; Farmers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="project-layout">
+        <!-- LEFT CONTENT -->
+        <div class="project-content">
+          <h2 class="section-title">Project Overview</h2>
+          <p>
+            The Millet &amp; Value-Added Food Training Initiative is a flagship community-based program designed to revive traditional millet cultivation and build robust local enterprise systems. By combining sustainable agronomy with modern food processing training, we help rural farmers and women's self-help groups (SHGs) build resilient, eco-friendly livelihoods.
+          </p>
+          <p>
+            Millets are climate-smart crops that require minimal water and have immense nutritional value. This program encourages local farmers to transition part of their land to organic millet varieties such as Ragi, Kambu, and Samai, ensuring food security and climate adaptability.
+          </p>
+          <p>
+            Beyond raw crop cultivation, the project focuses heavily on hands-on demonstrations in value-added processing. Participants are trained to produce premium millet-based foods—such as nutritional mixes, savory snacks, health drinks, and baked goods—which command much higher profit margins in local and semi-urban markets.
+          </p>
+          <p>
+            Through structured community participation, leadership modules, and micro-enterprise development, this initiative continues to empower marginalized rural women to establish profitable, cooperative-driven food processing units.
+          </p>
+
+          <div class="objectives-section">
+            <h2 class="section-title">Key Objectives</h2>
+            <div class="objectives-grid">
+              <div class="objective-card">Promote traditional millet cultivation using climate-resilient organic methods.</div>
+              <div class="objective-card">Conduct hands-on food processing training for premium value-added items.</div>
+              <div class="objective-card">Empower women's Self-Help Groups (SHGs) with micro-entrepreneurship skills.</div>
+              <div class="objective-card">Build strong rural-urban market linkages for certified organic millet products.</div>
+              <div class="objective-card">Raise health and dietary nutrition awareness across village communities.</div>
+            </div>
+          </div>
+
+          <div class="impact-section">
+            <h2 class="section-title">Project Impact</h2>
+            <div class="impact-grid">
+              <div class="impact-card">
+                <div class="impact-number">300+</div>
+                <p>Women &amp; Farmers Trained</p>
+              </div>
+              <div class="impact-card">
+                <div class="impact-number">12+</div>
+                <p>Village SHGs Formed</p>
+              </div>
+              <div class="impact-card">
+                <div class="impact-number">40%</div>
+                <p>Average Income Increase</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-section">
+            <h2 class="section-title">Project Gallery</h2>
+            <div class="gallery-grid">
+              <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=80&w=1200&auto=format&fit=crop" alt="Millet processing" />
+              <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop" alt="Traditional crop harvesting" />
+              <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?q=80&w=1200&auto=format&fit=crop" alt="Millet grains preparation" />
+            </div>
+          </div>
+
+          <a href="../projects.html" class="back-btn">← Back to Projects</a>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside>
+          <div class="sidebar-card">
+            <h3>Project Information</h3>
+            <ul class="info-list">
+              <li><strong>Project Type:</strong> Agriculture &amp; Livelihood Training</li>
+              <li><strong>Duration:</strong> 18 Months (Ongoing)</li>
+              <li><strong>Location:</strong> Kanchipuram / Chengalpattu Districts</li>
+              <li><strong>Target Group:</strong> Small Farmers &amp; Women SHGs</li>
+              <li><strong>Livelihood Focus:</strong> Food Processing &amp; Agronomy</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Focus Areas</h3>
+            <ul class="info-list">
+              <li>🌾 Millet Cultivation</li>
+              <li>🍪 Value-Added Food Production</li>
+              <li>👩🌾 SHG-based Entrepreneurship</li>
+              <li>🥗 Nutritional Awareness</li>
+              <li>📈 Local Market Linkages</li>
+              <li>♻ Sustainable Farm Practices</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section class="footer-col footer-brand-col">
+        <img src="../assets/images/common/circular_logo-removebg-preview.png" alt="Hope Ever Foundation logo" class="footer-logo" />
+        <p class="footer-tagline">Empowering marginalized communities through sustainable livelihoods, education, and dignity.</p>
+      </section>
+
+      <section class="footer-col">
+        <h3>Navigation</h3>
+        <button class="btn back-to-top" type="button">Back to Top</button>
+      </section>
+
+      <section class="footer-col">
+        <h3>Contact Details</h3>
+        <p>No. 12, Gandhi Nagar 3rd Street, Adyar, Chennai, Tamil Nadu 600020, India</p>
+        <p>Phone: +91 00000 00000 (to be updated)</p>
+        <p>Email: info@hopeeverfoundation.org (to be updated)</p>
+        <p>Instagram: @hopeeverfoundation (to be updated)</p>
+      </section>
+
+      <section class="footer-col">
+        <h3>Social &amp; External</h3>
+        <div class="footer-socials" aria-label="Social and external links">
+          <a href="https://instagram.com/hopeeverfoundation" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="../assets/images/icons/instagram.svg" alt="Instagram icon" />
+          </a>
+          <a href="mailto:info@hopeeverfoundation.org" aria-label="Email">
+            <img src="../assets/images/icons/mail.svg" alt="Email icon" />
+          </a>
+          <a href="tel:+910000000000" aria-label="Phone">
+            <img src="../assets/images/icons/phone.svg" alt="Phone icon" />
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Hope Ever Foundation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/navbar.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
