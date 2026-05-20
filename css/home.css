@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
 .hero {
   position: relative;
   overflow: hidden;
@@ -66,12 +69,16 @@
   min-height: 340px;
 }
 
+/* ==========================================================================
+   2. INTRO & MISSION/VISION SECTION
+   ========================================================================== */
 .intro-stack {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem; /* Balanced gap between introduction text and cards */
   text-align: center;
   align-items: center;
+  margin-bottom: -2rem; /* Pulls the next section closer to shorten the gap */
 }
 
 .intro-who {
@@ -83,10 +90,26 @@
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   width: 100%;
+  /* Removed height: 50% as it breaks grid flows when parent height isn't static */
 }
 
-.mission-vision article {
-  padding: 1.2rem;
+/* Specific styling to make Mission and Vision boxes larger */
+.mission-vision-grid .card {
+  padding: 3rem 2.2rem; /* Enhanced internal whitespace for a premium look */
+  font-size: 1.1rem;     /* Increased paragraph sizing for clarity */
+}
+
+/* Fixed from h2 to h3 to match your actual index.html file tags */
+.mission-vision-grid .card h2 {
+  font-size: 1.75rem;    
+  margin-bottom: 1rem;   
+}
+
+/* ==========================================================================
+   3. IMPACT GRID SECTION
+   ========================================================================== */
+section:has(.impact-grid) {
+  padding-top: 1rem !important; /* Compresses top spacing explicitly */
 }
 
 .impact-grid {
@@ -109,12 +132,15 @@
   font-size: 0.87rem;
 }
 
+/* ==========================================================================
+   4. PARTNERS CAROUSEL STRIP
+   ========================================================================== */
 .partner-strip {
-  padding: 2.5rem 0 4.5rem 0; /* Reduced top padding since there is a partner header now */
-  background-color: var(--white); /* White background for visibility */
+  padding: 2.5rem 0 4.5rem 0;
+  background-color: var(--white);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin-top: 0; /* Brought section closer to the preceding section */
+  margin-top: 0;
   overflow: hidden;
 }
 
@@ -144,17 +170,16 @@
   transform: translateX(6px);
 }
 
-
 .partner-track {
   display: flex;
-  gap: 2rem; /* Increased gap between logos */
+  gap: 2rem;
   width: max-content;
   animation: partnerSlide 26s linear infinite;
 }
 
 .partner-logo {
-  width: 200px; /* Increased width of the logo card */
-  height: 100px; /* Increased height of the logo card */
+  width: 200px;
+  height: 100px;
   padding: 0.5rem;
   border: 1px solid var(--c-border);
   border-radius: 10px;
@@ -162,7 +187,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease; /* Added transition for hover effect */
+  transition: transform 0.3s ease;
 }
 
 .partner-logo a {
@@ -174,30 +199,29 @@
 }
 
 .partner-logo img {
-  max-height: 80px; /* Adjusted image height to fit new card size */
-  max-width: 180px; /* Ensure image doesn't overflow horizontally */
+  max-height: 80px;
+  max-width: 180px;
   object-fit: contain;
-  margin: 0; /* Remove margin to prevent overflow */
-  transition: transform 0.3s ease; /* Added transition for hover effect */
+  margin: 0;
+  transition: transform 0.3s ease;
 }
 
 .partner-logo:hover {
-  transform: scale(1.05); /* Slightly scale up the card on hover */
+  transform: scale(1.05);
 }
 
 .partner-logo img:hover {
-  transform: scale(1.1); /* Slightly scale up the image on hover */
+  transform: scale(1.1);
 }
 
 @keyframes partnerSlide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
 @media (max-width: 1040px) {
   .impact-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

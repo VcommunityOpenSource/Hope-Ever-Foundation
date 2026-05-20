@@ -1,28 +1,153 @@
+/* ==========================================================================
+   ABOUT HERO TEXT COLOR FIX
+   ========================================================================== */
 .about-hero {
-  background: linear-gradient(140deg, #fff 0%, #f5ede1 100%);
+  background: linear-gradient(130deg, #0b4f3e 0%, #0f6e56 45%, #1a8a6c 100%);
+  color: #fff;
   border-bottom: 1px solid var(--c-border);
+}
+
+/* Force the main heading to be bright white like the home page */
+.about-hero h1 {
+  color: #fff !important;
+}
+
+/* Force the descriptive text to use the same clean, semi-transparent white */
+.about-hero p:not(.section-subtitle) {
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .about-hero .container {
   padding: 3.5rem 0;
 }
 
-.team-grid {
-  grid-template-columns: 1.1fr 0.9fr;
+/* ==========================================================================
+   TEAM INTERACTIVE TABS SYSTEM (PURE CSS)
+   ========================================================================== */
+.team-tabs-container {
+  width: 100%;
+  margin-top: 1.5rem;
 }
 
-.team-role-list {
+/* Hide the native radio buttons completely */
+.tab-switch {
+  display: none;
+}
+
+/* Tab Label Navigation Bar Container */
+.tab-labels {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--c-border, #e2e8f0);
+  padding-bottom: 1rem;
 }
 
-.team-media {
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--c-border);
+/* Base style for clickable group headers */
+.tab-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #64748b; /* Muted gray for inactive tabs */
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+  border-radius: 6px;
 }
 
+.tab-label:hover {
+  color: #0b4f3e; /* Accent green on hover */
+  background-color: rgba(11, 79, 62, 0.05);
+}
+
+/* Hide all tab contents by default */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ==========================================================================
+   TAB LOGIC MECHANICS (When checked, highlight navigation and show panel)
+   ========================================================================== */
+#tab-board:checked ~ .tab-labels .label-board,
+#tab-advisory:checked ~ .tab-labels .label-advisory,
+#tab-consultants:checked ~ .tab-labels .label-consultants {
+  color: #fff;
+  background-color: #0b4f3e; /* Highlights selected tab with primary deep green */
+  font-weight: 700;
+}
+
+#tab-board:checked ~ .content-board,
+#tab-advisory:checked ~ .content-advisory,
+#tab-consultants:checked ~ .content-consultants {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MEMBER PANEL CARDS GRID
+   ========================================================================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem 1.5rem 2rem 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.member-avatar {
+  font-size: 3rem;
+  background-color: #f1f5f9;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--c-border, #e2e8f0);
+}
+
+.team-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.4rem 0;
+  color: #09670b;
+}
+
+.member-role {
+  font-size: 0.95rem;
+  color: #0f6e56; /* Uses site green variant for roles */
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Responsive adjustment for small viewports */
+@media (max-width: 640px) {
+  .tab-labels {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    border-bottom: none;
+  }
+  .tab-label {
+    text-align: center;
+    border: 1px solid var(--c-border, #e2e8f0);
+  }
+}
 
 .district-map-wrap {
   background: #fff;
