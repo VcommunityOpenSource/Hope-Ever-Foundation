@@ -118,6 +118,33 @@
   overflow: hidden;
 }
 
+.partner-header {
+  margin-bottom: 2.5rem;
+}
+
+.partners-link {
+  text-decoration: none;
+  color: var(--c-primary-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.partners-link:hover {
+  color: var(--c-accent);
+}
+
+.partners-link .arrow-mark {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.partners-link:hover .arrow-mark {
+  transform: translateX(6px);
+}
+
+
 .partner-track {
   display: flex;
   gap: 2rem; /* Increased gap between logos */

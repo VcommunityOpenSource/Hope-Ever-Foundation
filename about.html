@@ -105,6 +105,16 @@
               <span class="chip" data-name="Kanyakumari">Kanyakumari</span>
             </div>
           </div>
+          <div class="district-details-card" id="district-details-box" style="display: none;">
+            <div class="details-header">
+              <h3 id="details-district-title">District Name</h3>
+              <span class="details-timer-badge" id="details-timer-label">Active for 10s</span>
+            </div>
+            <p id="details-district-text">Interventions carried out...</p>
+            <div class="details-countdown-bar">
+              <div class="details-countdown-progress" id="details-progress-bar"></div>
+            </div>
+          </div>
         </div>
     </section>
 
@@ -138,28 +148,132 @@
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section" id="partners" style="padding-top:0">
       <div class="container">
         <p class="section-subtitle">Our Partners &amp; Supporters</p>
         <h2 class="section-title">Our Partners &amp; Supporters</h2>
         <table class="partner-table">
           <thead>
-            <tr><th>Organization</th><th>Role/Nature</th></tr>
+            <tr><th>Organization</th><th>Role/Nature</th><th>Logo/Link</th></tr>
           </thead>
           <tbody>
-            <tr><td>NITI Aayog</td><td>Strategic development partnership</td></tr>
-            <tr><td>NABARD</td><td>Agricultural and rural finance programs</td></tr>
-            <tr><td>TAHDCO</td><td>SC/ST community development programs</td></tr>
-            <tr><td>NSDC</td><td>Skill training - 6+ year partnership</td></tr>
-            <tr><td>Ministry of AYUSH</td><td>[Role/Nature to be updated]</td></tr>
-            <tr><td>DC Handicrafts</td><td>[Role/Nature to be updated]</td></tr>
-            <tr><td>NMPB (National Medicinal Plants Board)</td><td>[Role/Nature to be updated]</td></tr>
-            <tr><td>Ministry of Tribal Welfare</td><td>[Role/Nature to be updated]</td></tr>
-            <tr><td>Arise Investment Pvt.</td><td>[Role/Nature to be updated]</td></tr>
-            <tr><td>SCGJ (Skill Council for Green Jobs)</td><td>[Role/Nature to be updated]</td></tr>
-            <tr><td>ASCI</td><td>Organic farming livelihood program</td></tr>
-            <tr><td>EDII</td><td>Core Employability & Add-on Programs, Entrepreneurship support</td></tr>
-            <tr><td>CECOWOR</td><td>Child rights project co-implementation</td></tr>
+            <tr>
+              <td>NITI Aayog</td>
+              <td>Strategic development partnership</td>
+              <td>
+                <a href="https://niti.gov.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit NITI Aayog">
+                  <img src="assets/images/partners/niti-aayog.png" alt="NITI Aayog Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>National Bank for Agriculture and Rural Development (NABARD)</td>
+              <td>Agricultural and rural finance programs</td>
+              <td>
+                <a href="https://www.nabard.org/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit NABARD">
+                  <img src="assets/images/partners/nabard.png" alt="NABARD Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Tamil Nadu Adi Dravidar Housing and Development Corporation (TAHDCO)</td>
+              <td>SC/ST community development programs</td>
+              <td>
+                <a href="https://tahdco.com/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit TAHDCO">
+                  <img src="assets/images/partners/tahdco.png" alt="TAHDCO Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>National Skill Development Corporation (NSDC)</td>
+              <td>Skill training - 6+ year partnership</td>
+              <td>
+                <a href="https://nsdcindia.org/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit NSDC">
+                  <img src="assets/images/partners/nsdc.png" alt="NSDC Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Ministry of AYUSH</td>
+              <td>Traditional wellness and herbal livelihood initiatives</td>
+              <td>
+                <a href="https://ayush.gov.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit Ministry of AYUSH">
+                  <img src="assets/images/partners/ministry-of-ayush.png" alt="Ministry of AYUSH Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Development Commissioner Handicrafts (DC Handicrafts)</td>
+              <td>Artisan and handicraft development support</td>
+              <td>
+                <a href="https://handicrafts.nic.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit DC Handicrafts">
+                  <img src="assets/images/partners/dc-handicrafts.png" alt="DC Handicrafts Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>National Medicinal Plants Board (NMPB)</td>
+              <td>Medicinal plants cultivation and promotion programs</td>
+              <td>
+                <a href="https://nmpb.nic.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit NMPB">
+                  <img src="assets/images/partners/nmpb-medicine.png" alt="NMPB Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Ministry of Tribal Affairs</td>
+              <td>Tribal welfare and livelihood empowerment programs</td>
+              <td>
+                <a href="https://tribal.nic.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit Ministry of Tribal Affairs">
+                  <img src="assets/images/partners/ministry-of-tribal-welfare.png" alt="Ministry of Tribal Welfare Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Arise Investments Pvt. Ltd.</td>
+              <td>Investment and business development partnership</td>
+              <td>
+                <a href="https://www.ariseinvest.com/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit Arise Investments Pvt. Ltd.">
+                  <img src="assets/images/partners/arise-investment-pvt.png" alt="Arise Investments Pvt. Ltd. Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Skill Council for Green Jobs (SCGJ)</td>
+              <td>Green skills training and certification programs</td>
+              <td>
+                <a href="https://sscgj.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit Skill Council for Green Jobs">
+                  <img src="assets/images/partners/scgj.png" alt="Skill Council for Green Jobs Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Agricultural Skill Council of India (ASCI)</td>
+              <td>Organic farming livelihood program</td>
+              <td>
+                <a href="https://asci.org.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit Agricultural Skill Council of India">
+                  <img src="assets/images/partners/asci.png" alt="Agricultural Skill Council of India Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Entrepreneurship Development Institute of India (EDII)</td>
+              <td>Core Employability &amp; Add-on Programs, Entrepreneurship support</td>
+              <td>
+                <a href="https://www.edii.in/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit Entrepreneurship Development Institute of India">
+                  <img src="assets/images/partners/edii.png" alt="Entrepreneurship Development Institute of India Logo" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Centre for Coordination and Welfare (CECOWOR)</td>
+              <td>Child rights project co-implementation</td>
+              <td>
+                <a href="https://cecowor.org/" target="_blank" rel="noopener noreferrer" class="partner-logo-box" title="Visit Centre for Coordination and Welfare">
+                  <img src="assets/images/partners/cecowor.png" alt="Centre for Coordination and Welfare Logo" />
+                </a>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

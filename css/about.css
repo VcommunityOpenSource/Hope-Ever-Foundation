@@ -129,14 +129,49 @@
 .partner-table td {
   padding: 0.8rem;
   border-bottom: 1px solid var(--c-border);
+  border-right: 1px solid var(--c-border);
   text-align: left;
   font-size: 0.93rem;
+  vertical-align: middle;
+}
+
+.partner-table th:last-child,
+.partner-table td:last-child {
+  border-right: none;
 }
 
 .partner-table th {
   background: #f7f2ea;
   color: var(--c-primary-strong);
 }
+
+.partner-logo-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 45px;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.partner-logo-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-accent);
+  box-shadow: 0 4px 8px rgba(15, 110, 86, 0.1);
+}
+
+.partner-logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 
 @media (max-width: 900px) {
   .team-grid,
@@ -152,4 +187,93 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* District Details Card Styles */
+.district-details-card {
+  margin-top: 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-accent);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(212, 135, 42, 0.15);
+  animation: slideInUpDetails 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideInUpDetails {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.details-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--c-primary-strong);
+  font-family: var(--ff-heading);
+}
+
+.details-timer-badge {
+  background: rgba(212, 135, 42, 0.12);
+  color: var(--c-accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#details-district-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--c-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+/* 10 Seconds Countdown Bar */
+.details-countdown-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(15, 110, 86, 0.1);
+}
+
+.details-countdown-progress {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--c-primary) 0%, var(--c-accent) 100%);
+  transform-origin: left center;
+}
+
+.countdown-active {
+  animation: shrinkWidth 10s linear forwards;
+}
+
+@keyframes shrinkWidth {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
 
