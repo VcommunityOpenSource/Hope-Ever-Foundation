@@ -188,17 +188,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.district-sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 /* District Details Card Styles */
 .district-details-card {
-  margin-top: 1.5rem;
   background: var(--c-surface);
-  border: 1px solid var(--c-accent);
+  border: 1px solid var(--c-primary);
   border-radius: var(--radius);
   padding: 1.25rem;
-  box-shadow: 0 10px 25px rgba(212, 135, 42, 0.15);
+  box-shadow: var(--shadow-soft);
   animation: slideInUpDetails 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  position: relative;
-  overflow: hidden;
 }
 
 @keyframes slideInUpDetails {
@@ -213,11 +217,7 @@
 }
 
 .details-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-  gap: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .details-header h3 {
@@ -227,53 +227,12 @@
   font-family: var(--ff-heading);
 }
 
-.details-timer-badge {
-  background: rgba(212, 135, 42, 0.12);
-  color: var(--c-accent);
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 #details-district-text {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--c-muted);
-  margin: 0 0 0.5rem 0;
+  margin: 0;
 }
 
-/* 10 Seconds Countdown Bar */
-.details-countdown-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: rgba(15, 110, 86, 0.1);
-}
-
-.details-countdown-progress {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(90deg, var(--c-primary) 0%, var(--c-accent) 100%);
-  transform-origin: left center;
-}
-
-.countdown-active {
-  animation: shrinkWidth 10s linear forwards;
-}
-
-@keyframes shrinkWidth {
-  from {
-    transform: scaleX(1);
-  }
-  to {
-    transform: scaleX(0);
-  }
-}
 
 

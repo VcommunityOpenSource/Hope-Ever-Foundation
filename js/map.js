@@ -175,8 +175,6 @@ function initChips(svg) {
     const detailsBox = document.getElementById('district-details-box');
     const detailsTitle = document.getElementById('details-district-title');
     const detailsText = document.getElementById('details-district-text');
-    const progressBar = document.getElementById('details-progress-bar');
-    const timerLabel = document.getElementById('details-timer-label');
 
     chipsClone.forEach(chip => {
         chip.addEventListener('click', () => {
@@ -188,10 +186,6 @@ function initChips(svg) {
                 clearTimeout(districtTimer);
                 districtTimer = null;
             }
-            if (districtTimerInterval) {
-                clearInterval(districtTimerInterval);
-                districtTimerInterval = null;
-            }
 
             // Pondicherry visual and detail behavior without standard geo JSON map paths
             if (chipName === "Pondicherry") {
@@ -199,10 +193,6 @@ function initChips(svg) {
                     detailsBox.style.display = 'block';
                     detailsTitle.innerText = "Pondicherry (Union Territory)";
                     detailsText.innerText = DISTRICT_INTERVENTIONS["Pondicherry"];
-                    
-                    progressBar.classList.remove('countdown-active');
-                    void progressBar.offsetWidth; // Trigger reflow to restart CSS animation
-                    progressBar.classList.add('countdown-active');
                 }
 
                 const parentLayout = chip.closest('.map-layout');
@@ -226,22 +216,11 @@ function initChips(svg) {
                     }
                 });
 
-                let secondsLeft = 10;
-                if (timerLabel) timerLabel.innerText = `Active for ${secondsLeft}s`;
-
-                districtTimerInterval = setInterval(() => {
-                    secondsLeft--;
-                    if (timerLabel) {
-                        timerLabel.innerText = secondsLeft > 0 ? `Active for ${secondsLeft}s` : `Active for 10s`;
-                    }
-                }, 1000);
-
                 districtTimer = setTimeout(() => {
                     chip.classList.remove('active');
                     chip.style.backgroundColor = "";
                     chip.style.color = "";
                     if (detailsBox) detailsBox.style.display = 'none';
-                    if (districtTimerInterval) clearInterval(districtTimerInterval);
                 }, 10000);
 
                 return;
@@ -293,26 +272,12 @@ function initChips(svg) {
                     setTimeout(() => { globalTooltip.style("opacity", 0); }, 1500);
                 }
 
-                // Show the interventions detail box with 10s countdown
+                // Show the interventions detail box
                 if (detailsBox) {
                     detailsBox.style.display = 'block';
                     detailsTitle.innerText = chipName === "Kanchipuram" ? "Kanchipuram / Chengalpattu" : chipName;
                     detailsText.innerText = DISTRICT_INTERVENTIONS[chipName] || "Interventions data to be loaded.";
-                    
-                    progressBar.classList.remove('countdown-active');
-                    void progressBar.offsetWidth; // Trigger reflow to restart CSS animation
-                    progressBar.classList.add('countdown-active');
                 }
-
-                let secondsLeft = 10;
-                if (timerLabel) timerLabel.innerText = `Active for ${secondsLeft}s`;
-
-                districtTimerInterval = setInterval(() => {
-                    secondsLeft--;
-                    if (timerLabel) {
-                        timerLabel.innerText = secondsLeft > 0 ? `Active for ${secondsLeft}s` : `Active for 10s`;
-                    }
-                }, 1000);
 
                 // Set 10 seconds timeout to hide details box and reset highlights
                 districtTimer = setTimeout(() => {
@@ -321,7 +286,6 @@ function initChips(svg) {
                         .style("fill", "#c8e6dc");
                     chip.classList.remove('active');
                     if (detailsBox) detailsBox.style.display = 'none';
-                    if (districtTimerInterval) clearInterval(districtTimerInterval);
                 }, 10000);
             }
         });
