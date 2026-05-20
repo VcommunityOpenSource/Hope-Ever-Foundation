@@ -271,12 +271,18 @@
   border-radius: 100px;
 }
 
+/* NEW: Styles the heading inside the Read More drop down */
+.prog-extra-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a2a1a;
+  margin-bottom: 0.8rem;
+}
+
 .prog-capabilities {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 0.6rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid #d4e8d4;
 }
 
 .prog-cap-item {
