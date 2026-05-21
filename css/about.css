@@ -28,8 +28,8 @@
 /* TEAM SECTION */
 
 .team-block {
-  margin-top: 2rem;
-  padding: 1.8rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
   border-radius: 22px;
   border: 1px solid rgba(0,0,0,0.06);
 }
@@ -51,12 +51,12 @@
 /* SECTION TITLES */
 
 .team-block-title {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.9rem;
   color: #184d3b;
   position: relative;
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
 }
 
 .team-block-title::after {
@@ -75,7 +75,7 @@
 .simple-team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.9rem; /* reduced spacing */
+  gap: 0.7rem; /* reduced spacing */
 }
 
 /* CARD */
@@ -83,12 +83,12 @@
 .simple-member-card {
   background: rgba(255,255,255,0.72);
   backdrop-filter: blur(6px);
-  border-radius: 16px;
-  padding: 1.2rem 1rem;
+  border-radius: 12px;
+  padding: 0.9rem 0.7rem;
   border: 1px solid rgba(0,0,0,0.05);
   text-align: center;
   transition: all 0.28s ease;
-  min-height: 120px;
+  min-height: 100px;
 
   display: flex;
   flex-direction: column;
@@ -105,9 +105,9 @@
 /* NAME */
 
 .simple-member-card h4 {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.3rem;
   color: #184d3b;
-  font-size: 1.08rem;
+  font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -116,7 +116,7 @@
 
 .simple-member-card p {
   color: #7a5c3e;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.3px;
 }
@@ -126,25 +126,25 @@
 @media (max-width: 768px) {
 
   .team-block {
-    padding: 1.2rem;
+    padding: 0.9rem;
   }
 
   .simple-team-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    gap: 0.6rem;
   }
 
   .team-block-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .simple-member-card {
-    min-height: 105px;
-    padding: 1rem 0.8rem;
+    min-height: 85px;
+    padding: 0.7rem 0.5rem;
   }
 
   .simple-member-card h4 {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
 }

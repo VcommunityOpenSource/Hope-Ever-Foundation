@@ -4,7 +4,7 @@
 
 .prog-hero {
   background: linear-gradient(135deg, var(--c-primary-deep) 0%, var(--c-primary-mid) 55%, var(--c-primary-soft) 100%);
-  padding: 5rem 6vw 4rem;
+  padding: 2rem 6vw 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -423,7 +423,7 @@
 
 @media (max-width: 760px) {
   .prog-hero {
-    padding: 4rem 1rem 3rem;
+    padding: 1.5rem 1rem 1.5rem;
   }
 
   .programs-grid-wrap {

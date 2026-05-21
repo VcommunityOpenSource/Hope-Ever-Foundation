@@ -40,3 +40,4 @@ window.initNavbar = function initNavbar() {
     });
   }
 };
+

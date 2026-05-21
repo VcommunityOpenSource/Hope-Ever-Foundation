@@ -98,21 +98,21 @@
 .mission-vision-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 2.5rem;
   width: 100%;
   /* Removed height: 50% as it breaks grid flows when parent height isn't static */
 }
 
 /* Specific styling to make Mission and Vision boxes larger */
 .mission-vision-grid .card {
-  padding: 3rem 2.2rem; /* Enhanced internal whitespace for a premium look */
+  padding: 1rem 1rem; /* Enhanced internal whitespace for a premium look */
   font-size: 1.1rem;     /* Increased paragraph sizing for clarity */
 }
 
 /* Fixed from h2 to h3 to match your actual index.html file tags */
 .mission-vision-grid .card h2 {
-  font-size: 1.75rem;    
-  margin-bottom: 1rem;   
+  font-size: 1.5rem;    
+  margin-bottom: 0.5rem;   
 }
 
 /* ==========================================================================
