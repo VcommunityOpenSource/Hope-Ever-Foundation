@@ -49,6 +49,9 @@
     if (typeof window.initNavbar === 'function') {
       window.initNavbar();
     }
+    if (typeof window.initHeroSlider === 'function') {
+      window.initHeroSlider();
+    }
     if (typeof window.initCounters === 'function') {
       window.initCounters();
     }
@@ -83,6 +86,26 @@
     initModules();
   });
 })();
+
+// ============================================
+// HERO IMAGE SLIDER
+// ============================================
+window.initHeroSlider = function() {
+    const slider = document.getElementById('hero-slider');
+    if (!slider) return;
+
+    const images = slider.querySelectorAll('img');
+    if (images.length <= 1) return;
+
+    let currentIndex = 0;
+    
+    // Change image every 5 seconds
+    setInterval(() => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+    }, 5000);
+};
 
 // ============================================
 // FLOATING BACK TO TOP BUTTON - Global Component
