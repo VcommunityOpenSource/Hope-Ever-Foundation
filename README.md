@@ -55,11 +55,10 @@ Each file is a full detail page for one project.
 | File                      | Project Name                                      |
 |---------------------------|---------------------------------------------------|
 | javvadhu-hills.html       | Land Holding & Horticulture, Javvadhu Hills       |
-| agri-training.html        | Agricultural Training Center & Livestock Program  |
+| agri-training.html        | Sustainable Agriculture, Organic Farming & Livestock Program |
 | surabi-magalir.html       | Surabi Magalir Membattu Iyakkam                   |
 | kolping-india.html        | Kolping India Project                             |
 | nsdc-skill.html           | NSDC Handicraft & Skill Development               |
-| organic-farm.html         | Organic Farming Livelihood Program (ASCI)         |
 | child-rights.html         | Child Rights Awareness (CECOWOR & ACA Denmark)    |
 | women-skill.html          | Women Empowerment through Skill Development       |
 | agarbatti.html            | Core Employability & Add-on Programs (EDII)       |
@@ -233,11 +232,10 @@ Filter tags:
 
 Projects list (slug → title):
   javvadhu-hills    → Land Holding & Horticulture, Javvadhu Hills   [Agriculture, Livelihoods]
-  agri-training     → Agricultural Training Center & Livestock       [Agriculture, Livelihoods]
+  agri-training     → Sustainable Agriculture, Organic Farming & Livestock [Agriculture, Livelihoods]
   surabi-magalir    → Surabi Magalir Membattu Iyakkam                [Women, Livelihoods]
   kolping-india     → Kolping India Project                          [Livelihoods, Women]
   nsdc-skill        → NSDC Handicraft & Skill Development            [Skill Development]
-  organic-farm      → Organic Farming Livelihood Program             [Agriculture, Livelihoods]
   child-rights      → Child Rights Awareness                         [Child Rights]
   women-skill       → Women Empowerment through Skill Development    [Women, Skill Development]
   agarbatti         → Value Added Products using Cow Dung            [Women, Livelihoods]ant]
