@@ -1,9 +1,6 @@
 # Hope Ever Foundation — Website Project
 
-Everytime U do updates, do  - 
-git pull --rebase origin main
-
-git push -u origin main
+LIVE @ - https://hopeever.org/
 
 
 A static multi-page website for Hope Ever Foundation, a registered non-profit
