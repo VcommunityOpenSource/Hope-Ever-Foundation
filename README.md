@@ -140,9 +140,9 @@ Naming rules — always lowercase, hyphens only, no spaces:
 
 | File                    | Purpose                                   |
 |-------------------------|-------------------------------------------|
-| 12aa-certificate.pdf    | Income Tax 12AA exemption certificate     |
-| 80g-certificate.pdf     | Income Tax 80G donor deduction certificate|
-| trust-deed.pdf          | Registration under Indian Trust Act 1882  |
+| 70000000138821621_178297321_2025_EXM_AABTH1701L_Form_10AB_Approval_Order_1086322525_1__21022026[22013].pdf | Income Tax Approval Order (10AB) |
+| certificate_of_empanalment_3year_issued.png | Ministry of Textiles Empanelment Certificate |
+| smpb-certificate.pdf    | State Medicinal Plants Board Certificate  |
 | annual-report-2023.pdf  | Annual report (update each year)          |
 | terms-and-conditions.pdf| Donor and program participation T&C       |
 
@@ -210,8 +210,7 @@ Impact counter values:
   1. Our History      — founded 2012, Indian Trust Act 1882, decade of work
   2. Our Team         — 16 professionals, roles listed, headshot grid
   3. Geographic Cover — Tamil Nadu district list + map visual with 14 pins
-  4. Recognition      — 12AA cert thumbnail + download, 80G cert thumbnail + download,
-                        Trust Deed download, T&C link
+  4. Recognition      — Income Tax 10AB, Ministry of Textiles Empanelment, SMPB Certificate, T&C link
   5. Our Partners     — table/grid of 15 partner orgs with logo + role description
 
 Districts covered:
