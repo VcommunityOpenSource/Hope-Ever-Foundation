@@ -98,7 +98,7 @@ window.initHeroSlider = function() {
     if (images.length <= 1) return;
 
     let currentIndex = 0;
-    
+
     // Change image every 5 seconds
     setInterval(() => {
         images[currentIndex].classList.remove('active');
@@ -106,6 +106,60 @@ window.initHeroSlider = function() {
         images[currentIndex].classList.add('active');
     }, 5000);
 };
+
+// ============================================
+// GOOGLE TRANSLATE WIDGET
+// ============================================
+(function() {
+    function injectTranslateWidget() {
+        const navWrap = document.querySelector('.nav-wrap');
+        if (!navWrap) return;
+
+        // Create translate container
+        const translateWrapper = document.createElement('div');
+        translateWrapper.className = 'translate-widget-wrapper';
+        translateWrapper.innerHTML = '<div id="google_translate_element" class="google-translate-element"></div>';
+
+        // Insert after the brand element
+        const brand = navWrap.querySelector('.brand');
+        if (brand) {
+            brand.insertAdjacentElement('afterend', translateWrapper);
+        } else {
+            // Fallback: prepend to nav-wrap
+            navWrap.insertBefore(translateWrapper, navWrap.firstChild);
+        }
+    }
+
+    // Define the Google Translate init callback BEFORE the script loads
+    window.googleTranslateElementInit = function() {
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: 'en',
+                includedLanguages: 'ta,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            },
+            'google_translate_element'
+        );
+    };
+
+    // Inject the widget container and load the Google Translate script
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            injectTranslateWidget();
+            const script = document.createElement('script');
+            script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            script.async = true;
+            document.body.appendChild(script);
+        });
+    } else {
+        injectTranslateWidget();
+        const script = document.createElement('script');
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.async = true;
+        document.body.appendChild(script);
+    }
+})();
 
 // ============================================
 // FLOATING BACK TO TOP BUTTON - Global Component
@@ -121,10 +175,10 @@ window.initHeroSlider = function() {
             <path d="M18 15l-6-6-6 6"/>
         </svg>
     `;
-    
+
     // Add to page
     document.body.appendChild(scrollBtn);
-    
+
     // Show/hide based on scroll
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
@@ -133,7 +187,7 @@ window.initHeroSlider = function() {
             scrollBtn.classList.remove('visible');
         }
     });
-    
+
     // Scroll to top when clicked
     scrollBtn.addEventListener('click', function() {
         window.scrollTo({
